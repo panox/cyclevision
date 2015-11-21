@@ -8,6 +8,7 @@ var methodOverride = require("method-override");
 var jwt            = require('jsonwebtoken');
 var expressJWT     = require('express-jwt');
 var app            = express();
+var Upload         = require('s3-uploader');
 
 // Database
 var config = require('./config/config');
