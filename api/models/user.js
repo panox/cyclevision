@@ -8,9 +8,8 @@ var UserSchema = new mongoose.Schema({
   profile_pic: String,
   type_of_cyclist: String,
   about_me: String,
-  city: String
-  routes: [  ],
-  //[RouteSchema]
+  city: String,
+  routes: Array //[RouteSchema]
 });
 
 module.exports = mongoose.model("User", UserSchema);
