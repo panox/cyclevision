@@ -15,4 +15,14 @@ router.route('/users/:id')
   .put(usersController.userUpdate)
   .delete(usersController.userDelete);
 
+router.route('/images')
+  .get(imagesController.imagesIndex)
+  .post(imagesController.imageCreate)
+
+
+router.route('/images/:id')
+  .get(imagesController.imageShow)
+  .put(imagesController.imageUpdate)
+  .delete(imagesController.imageDelete);
+
 module.exports = router
