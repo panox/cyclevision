@@ -1,3 +1,5 @@
+var passport = require("passport");
+
 function signup(req, res, next) {
   var localStrategy = passport.authenticate('local-signup', function(err, user, info) {
     if (err) return res.status(500).json({ message: 'Signup did not finish' });
