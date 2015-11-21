@@ -27,10 +27,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(morgan('dev'));
 
-// Routes
-var routes = require('./config/routes');
-app.use("/api", routes);
-
 // Port
 app.listen(3000);
 console.log('listening to 3000')
