@@ -9,6 +9,11 @@ var jwt            = require('jsonwebtoken');
 var expressJWT     = require('express-jwt');
 var app            = express();
 
+// Database
+var config = require('./config/config');
+mongoose.connect(config.database);
+
+// Method Ovveride
 app.use(methodOverride(function(req, res){
   if (req.body && typeof req.body === 'object' && '_method' in req.body) {
     var method = req.body._method
@@ -22,5 +27,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(morgan('dev'));
 
+// Routes
+var routes = require('./config/routes');
+app.use("/api", routes);
+
+// Port
 app.listen(3000);
 console.log('listening to 3000')
