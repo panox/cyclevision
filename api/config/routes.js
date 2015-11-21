@@ -23,7 +23,7 @@ router.route('/images')
 
 router.route('/images/:id')
   .get(imagesController.imageShow)
-//   .put(imagesController.imageUpdate)
-//   .delete(imagesController.imageDelete);
+  .put(imagesController.imageUpdate)
+  .delete(imagesController.imageDelete);
 
 module.exports = router
