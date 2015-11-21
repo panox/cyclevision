@@ -11,10 +11,10 @@ router.route('/users')
   // .post(usersController.userCreate)
 
 
-// router.route('/users/:id')
-//   .get(usersController.userShow)
+router.route('/users/:id')
+  .get(usersController.userShow)
 //   .put(usersController.userUpdate)
-//   .delete(usersController.userDelete);
+  .delete(usersController.userDelete);
 
 // router.route('/images')
 //   .get(imagesController.imagesIndex)
