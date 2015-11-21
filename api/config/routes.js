@@ -16,8 +16,8 @@ router.route('/users')
 //   .put(usersController.userUpdate)
 //   .delete(usersController.userDelete);
 
-// router.route('/images')
-//   .get(imagesController.imagesIndex)
+router.route('/images')
+  .get(imagesController.imagesIndex)
 //   .post(imagesController.imageCreate)
 
 
