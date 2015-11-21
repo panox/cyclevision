@@ -7,6 +7,8 @@ function usersIndex(req, res) {
   });
 }
 
+
+
 module.exports = {
   usersIndex:  usersIndex
 }

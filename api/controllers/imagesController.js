@@ -7,6 +7,28 @@ function imagesIndex(req, res) {
   });
 }
 
+function imageCreate(req, res){
+  var image = new Image(req.body);
+
+  image.save(function(err){
+    if (err) return res.status(500).json({message: "problem saving image"})
+
+    res.status(201).json({image: image});
+  });
+}
+
+function imageShow(req, res) {
+
+}
+
+function imageUpdate(req, res) {
+
+}
+
+function imageDelete(req, res) {
+
+}
+
 module.exports = {
   imagesIndex: imagesIndex
 }

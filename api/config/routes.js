@@ -18,7 +18,7 @@ router.route('/users')
 
 router.route('/images')
   .get(imagesController.imagesIndex)
-//   .post(imagesController.imageCreate)
+  .post(imagesController.imageCreate)
 
 
 // router.route('/images/:id')
