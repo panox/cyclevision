@@ -6,9 +6,11 @@ var usersController = require('../controllers/usersController');
 var imagesController = require('../controllers/imagesController');
 // controller does not exist yet
 
+router.route('/signup')
+  .post(usersController.authenticationsController.signup);
+
 router.route('/users')
   .get(usersController.usersIndex);
-  // .post(usersController.userCreate)
 
 
 router.route('/users/:id')
