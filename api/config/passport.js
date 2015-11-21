@@ -19,10 +19,10 @@ module.exports = function(passport) {
 
       var newUser            = new User();
       newUser.local.email    = email;
+      newUser.local.password = User.encrypt(password);
       newUser.local.username = req.body.username;
       newUser.local.fullname = req.body.fullname;
       newUser.local.image    = req.body.image;
-      newUser.local.password = User.encrypt(password);
 
       newUser.save(function(err, user) {
         // Error found
