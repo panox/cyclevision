@@ -3,7 +3,7 @@ var router   = express.Router();
 var passport = require("passport");
 
 var usersController = require('../controllers/usersController');
-// var imagesController = require('../controllers/imagesController');
+var imagesController = require('../controllers/imagesController');
 // controller does not exist yet
 
 router.route('/users')
