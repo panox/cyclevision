@@ -18,11 +18,11 @@ router.route('/users')
 
 router.route('/images')
   .get(imagesController.imagesIndex)
-  .post(imagesController.imageCreate)
+  .post(imagesController.imageCreate);
 
 
-// router.route('/images/:id')
-//   .get(imagesController.imageShow)
+router.route('/images/:id')
+  .get(imagesController.imageShow)
 //   .put(imagesController.imageUpdate)
 //   .delete(imagesController.imageDelete);
 
