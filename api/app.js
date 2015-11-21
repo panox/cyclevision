@@ -13,6 +13,7 @@ var app            = express();
 var config = require('./config/config');
 mongoose.connect(config.database);
 
+// Require passport
 require('./config/passport')(passport);
 
 // Method Ovveride
@@ -29,6 +30,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(morgan('dev'));
 app.use(passport.initialize());
+
+
 // Routes
 var routes = require('./config/routes');
 app.use("/api", routes);
