@@ -42,8 +42,9 @@ function imageUpdate(req, res) {
     if (err) return res.status(500).json({ message: "There is an error updating your image"})
 
     res.status(201).json({ message: "Image was successfully updated", image: image});
-  })
-});
+    })
+  });
+}
 
 function imageDelete(req, res) {
 
