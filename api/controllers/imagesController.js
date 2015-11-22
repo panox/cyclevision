@@ -62,9 +62,12 @@ function imageDelete(req, res) {
   Image.findById(req.params.id, function(err, image) {
     if (err) return res.status(500).json({message: 'could not find the image'})
 
-    User.update({_id: image.user}, {$pull : {images : image._id}});
-    image.remove();
-    res.status(200).json({image:image});
+    User.update({_id: image.user}, {$pull : {images : image._id}}, function(err, user){
+      if (err) return res.status(500).json({message: 'could not update user images collection'})
+      return res.status(200).json({user: user});
+    });
+    // image.remove();
+    
   });
 }
 
