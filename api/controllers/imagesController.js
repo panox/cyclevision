@@ -68,7 +68,8 @@ function imageDelete(req, res) {
         if (err) return res.status(500).json({ message: "There is was an error deleting your image"})
       });
     });
-    return res.status(200).json({ message: "Image was successfully removed");
+    
+    return res.status(200).json({ message: "Image was successfully removed"});
   });
 }
 
