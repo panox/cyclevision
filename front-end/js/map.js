@@ -17,10 +17,17 @@ $(function() {
         center: myLatLng
       });
 
+      var infowindow = new google.maps.InfoWindow({
+          content: contentString
+      });
+
       var marker = new google.maps.Marker({
         position: myLatLng,
         map: map,
-        title: 'Hello World!'
+        title: 'SecondHome'
+      });
+      marker.addListener('click', function() {
+        infowindow.open(map, marker);
       });
 
     })
