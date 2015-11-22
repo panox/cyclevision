@@ -4,6 +4,7 @@ $(function() {
   .done(function(res){
     var imageLocation = res.image.location
     var secondHome = "https://maps.googleapis.com/maps/api/geocode/json?address=" + imageLocation
+    var picture = res.image.image
 
     $.get(secondHome)
     .done(function(res){
@@ -18,7 +19,7 @@ $(function() {
       });
 
       var infowindow = new google.maps.InfoWindow({
-          content: contentString
+          content: '<img src='+ picture +' height="80" width="80">'
       });
 
       var marker = new google.maps.Marker({
