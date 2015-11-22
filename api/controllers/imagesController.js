@@ -13,9 +13,15 @@ function imageCreate(req, res){
 
   image.save(function(err){
     if (err) return res.status(500).json({message: "problem saving image"})
+  });
 
+  user.images.push(image);
+
+  user.save(function(err){
+    if (err) return res.status(500).json({message: "problem adding image to this user"})
     res.status(201).json({image: image});
   });
+  
 }
 
 function imageShow(req, res) {
