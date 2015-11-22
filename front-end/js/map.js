@@ -2,7 +2,16 @@ $(function() {
 
   var amphitheatreParkway = "https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA"
 
+  $.get(amphitheatreParkway)
+  .done(function(res){
+    var location = res.results[0].geometry.location
+  })
+  .fail(function(res){
+    console.log("An error")
+  })
+
 });
+
 
 var myLatLng = {lat: -25.363, lng: 131.044};
 
