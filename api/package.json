@@ -18,6 +18,7 @@
     "cookie-parser": "^1.0.1",
     "express": "~4.0.0",
     "express-jwt": "^3.0.1",
+    "express-session": "^1.12.1",
     "jsonwebtoken": "^5.0.5",
     "method-override": "^1.0.2",
     "mongoose": "4.1.1",
