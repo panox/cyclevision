@@ -14,7 +14,21 @@ function userShow(req, res){
   });
 }
 
-//function userUpdate goes here
+function userUpdate(req, res){
+  User.findById(req.params.id,  function(err, user) {
+    if (err) return res.status(500).json({message: "Something went wrong!"});
+    if (!user) return res.status(404).json({message: 'No user found.'});
+
+    if (req.body.email) user.local.email = req.body.name;
+    if (req.body.password) user.local.password = req.body.password;
+
+    user.save(function(err) {
+     if (err) return res.status(500).json({message: "Something went wrong!"});
+
+      res.status(201).json({message: 'User successfully updated.', user: user});
+    });
+  });
+}
 
 function userDelete(req, res){
   User.findByIdAndRemove({_id: req.params.id}, function(err){
@@ -26,5 +40,6 @@ function userDelete(req, res){
 module.exports = {
   usersIndex:  usersIndex,
   userShow: userShow,
+  userUpdate: userUpdate,
   userDelete: userDelete
 }
