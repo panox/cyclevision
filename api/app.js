@@ -8,6 +8,7 @@ var methodOverride = require("method-override");
 var jwt            = require('jsonwebtoken');
 var expressJWT     = require('express-jwt');
 var app            = express();
+var expressSession = require('express-session');
 
 // Database
 var config = require('./config/config');
@@ -30,6 +31,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(morgan('dev'));
 app.use(passport.initialize());
+app.use(expressSession({secret: 'mySecretKey'}));
 
 
 // Routes
