@@ -21,6 +21,12 @@ function userUpdate(req, res){
 
     if (req.body.email) user.local.email = req.body.name;
     if (req.body.password) user.local.password = req.body.password;
+    if (req.body.first_name) user.first_name = req.body.first_name;
+    if (req.body.last_name) user.last_name = req.body.last_name;
+    if (req.body.profile_pic) user.profile_pic = req.body.profile_pic;
+    if (req.body.type_of_cyclist) user.type_of_cyclist = req.body.type_of_cyclist;
+    if (req.body.about_me) user.about_me = req.body.about_me;
+    if (req.body.city) user.city = req.body.city;
 
     user.save(function(err) {
      if (err) return res.status(500).json({message: "Something went wrong!"});
