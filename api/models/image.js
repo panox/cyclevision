@@ -10,12 +10,16 @@ var ImageSchema = new mongoose.Schema({
   updated_at: Date
 })
 
-ImageSchema.pre('save', function(next){
-  now = new Date();
-  this.updated_at = now;
-  if ( !this.created_at ) {
-    this.created_at = now;
-  }
+// ImageSchema.pre('save', function(next){
+//   now = new Date();
+//   this.updated_at = now;
+//   if ( !this.created_at ) {
+//     this.created_at = now;
+//   }
+//   next();
+// });
+ImageSchema.pre('remove', function(next) {
+  this.model('User').remove({ images: this._id }).exec();
   next();
 });
 
