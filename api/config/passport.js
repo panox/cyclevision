@@ -11,7 +11,6 @@ module.exports = function(passport) {
 
     // Find a user with this email
     User.findOne({ 'local.email' : email }, function(err, user) {
-      console.log(user)
       // Error found
       if (err) return done(err, false, { message: "Something went wrong." });
 
