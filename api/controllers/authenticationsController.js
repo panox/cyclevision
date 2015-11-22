@@ -11,7 +11,7 @@ function signup(req, res) {
     return res.status(200).json({ token: token, user: user})
   });
   return signupStrategy(req, res);
-}
+};
 
 function login(req, res, next) {
   var loginStrategy = passport.authenticate('local-login', function(err, user) {
