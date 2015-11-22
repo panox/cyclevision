@@ -9,18 +9,23 @@ function imagesIndex(req, res) {
 }
 
 function imageCreate(req, res){
-  var image = new Image(req.body);
+  User.findById(req.body.user, function(err, user) {
 
-  image.save(function(err){
-    if (err) return res.status(500).json({message: "problem saving image"})
-  });
+    var image = new Image(req.body);
 
-  user.images.push(image);
+    image.save(function(err){
+      if (err) return res.status(500).json({message: "problem saving image"})
 
-  user.save(function(err){
-    if (err) return res.status(500).json({message: "problem adding image to this user"})
-    res.status(201).json({image: image});
-  });
+      user.images.push(image);
+
+      user.save(function(err){
+        if (err) return res.status(500).json({message: "problem adding image to this user"})
+        res.status(201).json({image: image});
+      });
+    
+    });
+
+  }
   
 }
 
