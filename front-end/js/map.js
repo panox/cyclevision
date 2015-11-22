@@ -1,16 +1,17 @@
 $(function() {
 
   var amphitheatreParkway = "https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA"
+  var secondHome = "https://maps.googleapis.com/maps/api/geocode/json?address=68+Hanbury St,+London+E1 5JL"
 
-  $.get(amphitheatreParkway)
+  $.get(secondHome)
   .done(function(res){
     var location = res.results[0].geometry.location
 
-    var myLatLng = {lat: -25.363, lng: 131.044};
+    var myLatLng = {lat: location.lat, lng: location.lng};
 
 
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 4,
+      zoom: 18,
       center: myLatLng
     });
 
