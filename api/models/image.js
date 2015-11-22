@@ -18,10 +18,6 @@ ImageSchema.pre('save', function(next){
   }
   next();
 });
-ImageSchema.pre('remove', function(next) {
-  this.model('User').remove({ images: this._id }).exec();
-  next();
-});
 
 
 module.exports = mongoose.model("Image", ImageSchema);
