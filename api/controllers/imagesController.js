@@ -1,4 +1,5 @@
 var Image = require('../models/image');
+var User   = require('../models/user');
 
 function imagesIndex(req, res) {
   Image.find(function(err, images){
