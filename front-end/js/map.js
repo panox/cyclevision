@@ -5,27 +5,28 @@ $(function() {
   $.get(amphitheatreParkway)
   .done(function(res){
     var location = res.results[0].geometry.location
+
+    var myLatLng = {lat: -25.363, lng: 131.044};
+
+    function initMap() {
+      
+
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 4,
+        center: myLatLng
+      });
+
+      var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: 'Hello World!'
+      });
+    }
+
+
   })
   .fail(function(res){
     console.log("An error")
   })
 
 });
-
-
-var myLatLng = {lat: -25.363, lng: 131.044};
-
-function initMap() {
-  
-
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 4,
-    center: myLatLng
-  });
-
-  var marker = new google.maps.Marker({
-    position: myLatLng,
-    map: map,
-    title: 'Hello World!'
-  });
-}
