@@ -33,14 +33,14 @@ app.use(morgan('dev'));
 app.use(cors());
 app.use(passport.initialize());
 
-var secret         = require('./config/config').secret;
-app.use('/api', expressJWT({ secret: secret })
-  .unless({
-    path: [
-      { url: '/api/login', methods: ['POST'] },
-      { url: '/api/signup', methods: ['POST'] }
-    ]
-  }));
+// var secret         = require('./config/config').secret;
+// app.use('/api', expressJWT({ secret: secret })
+//   .unless({
+//     path: [
+//       { url: '/api/login', methods: ['POST'] },
+//       { url: '/api/signup', methods: ['POST'] }
+//     ]
+//   }));
 
 
 // Routes
