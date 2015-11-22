@@ -64,10 +64,11 @@ function imageDelete(req, res) {
 
     User.update({_id: image.user}, {$pull : {images : image._id}}, function(err, user){
       if (err) return res.status(500).json({message: 'could not update user images collection'})
-      return res.status(200).json({user: user});
+      image.remove(function(err) {
+        if (err) return res.status(500).json({ message: "There is was an error deleting your image"})
+      });
     });
-    // image.remove();
-    
+    return res.status(200).json({ message: "Image was successfully removed");
   });
 }
 
