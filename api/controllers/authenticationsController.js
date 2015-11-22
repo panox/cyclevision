@@ -19,6 +19,7 @@ function signup(req, res, next) {
   });
 
   return localStrategy(req, res, next);
+
 };
 
 function login(req, res, next) {
