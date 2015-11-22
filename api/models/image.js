@@ -5,8 +5,7 @@ var ImageSchema = new mongoose.Schema({
   user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
   image: String,
   title: String,
-  location: String, 
-  routes: Array,
+  location: String,
   created_at: Date,
   updated_at: Date
 })

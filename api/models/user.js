@@ -8,7 +8,7 @@ var UserSchema = new mongoose.Schema({
   type_of_cyclist: String,
   about_me: String,
   city: String,
-  images: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Image' }]
+  images: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Image' }],
   local: {
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true }
