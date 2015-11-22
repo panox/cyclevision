@@ -14,26 +14,31 @@ module.exports = function(passport) {
       // Error found
       if (err) return done(err, false, { message: "Something went wrong." });
 
-      // No error but already an user registered
-      if (user) return done(null, false, { message: "Please choose another email." });
-
-      var newUser            = new User();
-      newUser.local.email    = email;
-      newUser.local.password = User.encrypt(password);
-      newUser.first_name = req.body.first_name;
-      newUser.last_name = req.body.last_name;
-      newUser.profile_pic = req.body.profile_pic;
-      newUser.type_of_cyclist = req.body.type_of_cyclist;
-      newUser.about_me = req.body.about_me;
-      newUser.city = req.body.city;
-
-      newUser.save(function(err, user) {
-        // Error found
-        if (err) return done(err, false, { message: "Something went wrong." });
+      // If there is no user create one
+      if (!user) { 
         
-        // New user created
-        return done(null, user);
-      });
+        var newUser            = new User();
+        newUser.local.email    = email;
+        newUser.local.password = User.encrypt(password);
+        newUser.first_name = req.body.first_name;
+        newUser.last_name = req.body.last_name;
+        newUser.profile_pic = req.body.profile_pic;
+        newUser.type_of_cyclist = req.body.type_of_cyclist;
+        newUser.about_me = req.body.about_me;
+        newUser.city = req.body.city;
+
+        newUser.save(function(err, user) {
+          // Error found
+          if (err) return done(err, false, { message: "could not save user" });
+          
+          // New user created
+          return done(null, user);
+        });
+        
+      }
+      else {
+        return done(null, false, { message: "Please choose another email." });
+      }
     });
   }));
   
