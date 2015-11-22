@@ -15,7 +15,7 @@ router.route('/users')
 
 router.route('/users/:id')
   .get(usersController.userShow)
-//   .put(usersController.userUpdate)
+  .put(usersController.userUpdate)
   .delete(usersController.userDelete);
 
 router.route('/images')
