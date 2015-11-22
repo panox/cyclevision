@@ -9,7 +9,7 @@ function signup(req, res, next) {
     if (err) return res.status(500).json({ message });
     if (!user) return res.status(401).json({ message });
 
-    var token = jwt.sign(user, secret { expiresIn: 60*60*24 });
+    var token = jwt.sign(user, secret, { expiresIn: 60*60*24 });
 
     return res.status(200).json({ 
       success: true,

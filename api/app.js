@@ -1,4 +1,5 @@
 var express        = require('express');
+var cors           = require('cors');
 var morgan         = require('morgan');
 var bodyParser     = require('body-parser');
 var mongoose       = require('mongoose');
@@ -8,7 +9,6 @@ var methodOverride = require("method-override");
 var jwt            = require('jsonwebtoken');
 var expressJWT     = require('express-jwt');
 var app            = express();
-var expressSession = require('express-session');
 
 // Database
 var config = require('./config/config');
@@ -30,6 +30,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(morgan('dev'));
+app.use(cors());
 app.use(passport.initialize());
 app.use(expressSession({secret: 'mySecretKey'}));
 
