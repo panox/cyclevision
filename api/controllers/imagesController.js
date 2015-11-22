@@ -25,7 +25,7 @@ function imageCreate(req, res){
     
     });
 
-  }
+  })
   
 }
 
