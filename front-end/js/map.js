@@ -1,7 +1,7 @@
 $(function() {
 
   var amphitheatreParkway = "https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA"
-  var secondHome = "https://maps.googleapis.com/maps/api/geocode/json?address=68+Hanbury St,+London+E1 5JL"
+  var secondHome = "https://maps.googleapis.com/maps/api/geocode/json?address=68 Hanbury St London E1 5JL"
 
   $.get(secondHome)
   .done(function(res){
