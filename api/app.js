@@ -32,7 +32,14 @@ app.use(cookieParser());
 app.use(morgan('dev'));
 app.use(cors());
 app.use(passport.initialize());
-app.use(expressSession({secret: 'mySecretKey'}));
+
+app.use('/api', expressJWT({ secret: secret })
+  .unless({
+    path: [
+      { url: '/api/login', methods: ['POST'] },
+      { url: '/api/signup', methods: ['POST'] }
+    ]
+  }));
 
 
 // Routes
