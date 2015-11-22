@@ -5,10 +5,9 @@ var passport = require("passport");
 var usersController = require('../controllers/usersController');
 var imagesController = require('../controllers/imagesController');
 var authenticationsController = require('../controllers/authenticationsController');
-// controller does not exist yet
 
-router.route('/signup')
-  .post(authenticationsController.signup);
+router.post('/signup', authenticationsController.signup);
+router.post('/login', authenticationsController.login);
 
 router.route('/users')
   .get(usersController.usersIndex);

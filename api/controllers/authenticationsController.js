@@ -13,7 +13,7 @@ function signup(req, res, next) {
 
     return res.status(200).json({ 
       success: true,
-      message: "Thank you for authenticating",
+      message: "Thank you for signing up",
       user: user,
       token: token
     });
