@@ -59,11 +59,12 @@ function imageUpdate(req, res) {
 }
 
 function imageDelete(req, res) {
-  var id = req.params.id;
-  Image.remove({_id: id}, function(err) {
-    if (err) return res.status(500).json({message: 'There is a problem deleting this image'})
+  Image.findById(req.params.id, function(err, image) {
+    if (err) return res.status(500).json({message: 'could not find the image'})
 
-    res.status(200).json({message: 'Image has been successfully deleted'});
+    User.update({_id: image.user}, {$pull : {images : image._id}});
+    image.remove();
+    res.status(200).json({image:image});
   });
 }
 
