@@ -21,15 +21,8 @@ $(function() {
     var compiledTemplate = underscoreTemplate(data);
     $('#current-user-name').append(compiledTemplate);
 
-    console.log(res.user.images[0])
-
-  })
-  .fail(function(res){
-    console.log("Error finding user")
-  })
-  // get user images
-  $.get(url)
-  .done(function(res){
+    console.log(res.user.images[0]);
+    //get current user images
     _(res.user.images).each(function(item) {
       var underscoreTemplate = _.template($('#user-images').html());
       var compiledTemplate = underscoreTemplate(item);
@@ -38,6 +31,7 @@ $(function() {
 
   })
   .fail(function(res){
-    console.log("Error getting values")
-})
+    console.log("Error finding user")
+  })
+
 });
