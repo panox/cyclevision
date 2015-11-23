@@ -13,7 +13,7 @@ $(function() {
       last_name: user.last_name,
       profile_pic: user.profile_pic,
       type_of_cyclist: user.type_of_cyclist,
-      about_me: user.about_me,
+      about_me: user.about_me
     }
 
     var template = _.template($( '#user-template' ).html());
@@ -25,6 +25,19 @@ $(function() {
   .fail(function(res){
     console.log("Error finding user")
   })
+  // get user images
+  $.get(url)
+  .done(function(res){
+    console.log(res.user.images)
+    _(res.user.images).each(function(item) {
+      console.log(item)
+      var underscoreTemplate = _.template($('#user-images').html());
+      var compiledTemplate = underscoreTemplate(item);
+      $('#images').append(compiledTemplate);
+    })
 
-
+  })
+  .fail(function(res){
+    console.log("Error getting values")
+})
 });
