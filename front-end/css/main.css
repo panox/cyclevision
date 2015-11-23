@@ -76,7 +76,7 @@ footer.page-footer .footer-copyright {
 .image_back {
   width: inherit;
   margin: auto 0;
-  background-image: url('./images/login-logo2.png');
+
 }
 .login_circle {
 width: 75%;
@@ -88,7 +88,7 @@ background-color: aliceblue;
 
 .loginform {
   width: 300px;
-      margin: 60px auto 30px;
-      padding: 10px;
-      position: relative;
+  margin: 60px auto 30px;
+  padding: 10px;
+  position: relative;
 }
