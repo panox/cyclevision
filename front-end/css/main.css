@@ -64,7 +64,7 @@ footer.page-footer .footer-copyright {
   padding: 10px;
   text-align: center;
   font-family: Amatic SC;
-  font-size: 200px;
+  font-size: 100px;
   color: white;
   letter-spacing: 5px;
   border-radius: 10px;
@@ -75,7 +75,6 @@ footer.page-footer .footer-copyright {
 }
 .image_back {
   width: inherit;
-  
   margin: auto 0;
 }
 .login_circle {
