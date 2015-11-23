@@ -15,12 +15,21 @@ $(function(){
     return ajaxRequest(method, url, data)
   }
 
-  function setToken(){
+  function setToken(token){
     return window.localStorage.setItem("token", token);
   }
 
-  function authenticationSuccessful(){
+  function authenticationSuccessful(data){
+    if (data.token) setToken(data.token);
+  }
 
+  function setRequestHeader(xhr, settings) {
+    var token = getToken();
+    if (token) return xhr.setRequestHeader('Authorization','Bearer ' + token);
+  }
+
+  function getToken() {
+    return localStorage.getItem("token");
   }
 
   function ajaxRequest(method, url, data){
@@ -28,8 +37,10 @@ $(function(){
     method: method,
     url: url,
     data: data,
+    beforeSend: setRequestHeader,
     }).done(function(data){
       console.log(data);
+      authenticationSuccessful(data);
     }).fail(function(data) {
       console.log(data.responseJSON.message);
     });
