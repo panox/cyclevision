@@ -1,20 +1,13 @@
 $(function() {
 
-  function ajaxRequest(method, url, data){
-    return $.ajax({
-    method: method,
-    url: url,
-    data: data,
-    beforeSend: setRequestHeader,
-    }).done(function(data){
-      console.log(data);
-      authenticationSuccessful(data);
-    }).fail(function(data) {
-      console.log(data.responseJSON.message);
-    });
-  }
-
-  
+  // get images
+  $.get("http://localhost:3000/api/images")
+  .done(function(res){
+    console.log(res)
+  })
+  .fail(function(res){
+    console.log("Error getting values")
+  })
 
 
 });
