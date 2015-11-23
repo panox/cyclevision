@@ -6,10 +6,14 @@ var secret   = process.env.SECRET;
 
 function signup(req, res, next) {
   var localStrategy = passport.authenticate('local-signup', function(err, user, message) {
-    if (err) return res.status(500).json({ message });
-    if (!user) return res.status(401).json({ message });
+    if (err) return res.status(500).json({ message: err });
+    if (!user) return res.status(401).json({ message: 'No user found' });
+
+    console.log("HERE", secret);
 
     var token = jwt.sign(user, secret, { expiresIn: 60*60*24 });
+
+    console.log(token);
 
     return res.status(200).json({ 
       success: true,
