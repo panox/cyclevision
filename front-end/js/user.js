@@ -1,9 +1,15 @@
 $(function() {
 
-  function getToken() {
-    return localStorage.getItem("token");
-  }
+  
+  var userId = localStorage.getItem("userId");
+  var url = "http://localhost:3000/api/users/" + userId
 
-  console.log(getToken());
+  $.get(url)
+  .done(function(res){
+    console.log(res)
+  })
+  .fail(function(res){
+    console.log("Error making map")
+  })
 
 });
