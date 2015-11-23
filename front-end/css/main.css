@@ -10,29 +10,61 @@ nav {
   line-height: 120px; 
   letter-spacing: 5px;
 
-  }
-  nav a {
-    color: deeppink; 
-  }
-  nav ul li:hover, nav ul li.active {
-    border-radius: ;
-    background-color: hotpink;
-    
-    transition: opacity .55s ease-in;
-     }
-
-  nav .nav-wrapper {
-    position: relative;
-    height: 100%; }
-    nav .nav-wrapper i {
-      display: block;
-      font-size: 2rem; }
+}
+nav a {
+  color: deeppink; 
+}
 
 
-nav .brand-logo {
+nav ul li:hover, nav ul li.active {
+  border-radius:  ;
+  background-color: hotpink;
+
+
+  transition: opacity .55s ease-in;
+}
+
+nav .nav-wrapper {
   position: relative;
-  color: #fff;
-  display: inline-block;
-  font-size: 2.1rem;
+  height: 100%; }
+  nav .nav-wrapper i {
+    display: block;
+    font-size: 2rem; }
+
+
+    nav .brand-logo {
+      position: relative;
+      color: #fff;
+      display: inline-block;
+      font-size: 2.1rem;
+      padding: 10px;
+      white-space: nowrap; 
+
+    }
+    footer.page-footer {
+      margin-top: 20px;
+      padding-top: 20px;
+      background-color: lightslategrey;
+      border-radius: 10px; 
+    }
+    footer.page-footer .footer-copyright {
+      overflow: hidden;
+      height: 50px;
+      line-height: 50px;
+      color: rgba(255, 255, 255, 0.8);
+      background-color: hotpink; }
+
+.login-background {
+  height: 600px;
+  border-radius: 10px;
+  background-color: white;
+
+
+}
+h1 {
+  background-color: hotpink;
   padding: 10px;
-  white-space: nowrap; }
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+}
