@@ -2,24 +2,19 @@ $(function() {
 
   
   var userId = localStorage.getItem("userId");
-  var url = "http://localhost:3000/api/users/" + userId
+  var url = "http://localhost:3000/api/users/" + userId;
 
   $.get(url)
   .done(function(res){
-    console.log(res)
-    _(res.user.local.email)
+    console.log(res.user.local.email)
+    var userEmail = res.user.local.email
+    var underscoreTemplate = _.template($('#current-user-template').html());
+    var compiledTemplate = underscoreTemplate(userEmail);
+    $('#current-user-name').append(compiledTemplate);
   })
   .fail(function(res){
     console.log("Error finding user")
   })
 
-  //   console.log(res.images)
-  //   _(res.images).each(function(item) {
-  //     var underscoreTemplate = _.template($('#images-template').html());
-  //     var compiledTemplate = underscoreTemplate(item);
-  //     $('#images').append(compiledTemplate);
-  //   })
-
-  // })
 
 });

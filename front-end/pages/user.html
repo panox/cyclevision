@@ -3,10 +3,14 @@
 <head>
   <title>Current User Page</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script type="text/javascript" src="../js/user.js"></script>
   <script type="text/javascript" src="../js/underscore-min.js"></script>
+  <script type="text/javascript" src="../js/user.js"></script>
+  
 </head>
 <body>
+<script type="text/x-template" id="current-user-template">
+  <li><%= local.email %> is the current user email</li>
+</script>
 
 
   <ul id="current-user-name">
