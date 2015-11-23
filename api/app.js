@@ -10,6 +10,10 @@ var jwt            = require('jsonwebtoken');
 var expressJWT     = require('express-jwt');
 var app            = express();
 
+var secret = process.env.SECRET;
+
+if(!secret) throw new Error('No secret in zshrc file');
+
 // Database
 var config = require('./config/config');
 mongoose.connect(config.database);
@@ -33,7 +37,6 @@ app.use(morgan('dev'));
 app.use(cors());
 app.use(passport.initialize());
 
-// var secret         = require('./config/config').secret;
 // app.use('/api', expressJWT({ secret: secret })
 //   .unless({
 //     path: [
