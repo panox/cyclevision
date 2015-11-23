@@ -1,13 +1,12 @@
 $(function() {
 
   
-  var userId = localStorage.getItem("token");
+  var userId = localStorage.getItem("userId");
   var url = "http://localhost:3000/api/users/" + userId
-  console.log(userId)
 
   $.get(url)
   .done(function(res){
-    console(res)
+    console.log(res)
   })
   .fail(function(res){
     console.log("Error making map")
