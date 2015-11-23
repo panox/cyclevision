@@ -49,6 +49,7 @@ $(function(){
     beforeSend: setRequestHeader,
     }).done(function(data){
       console.log(data);
+      window.localStorage.setItem("userId", data.user._id);
       authenticationSuccessful(data);
     }).fail(function(data) {
       console.log(data.responseJSON.message);
