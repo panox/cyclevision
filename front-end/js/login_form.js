@@ -1,7 +1,10 @@
 $(function(){ 
 
+  console.log("loaded")
+
   function init(){
   $("form").on("submit", submitForm);
+  $("#logout").on("click", logOut)
 
   }
 
@@ -30,6 +33,12 @@ $(function(){
 
   function getToken() {
     return localStorage.getItem("token");
+  }
+
+  function logOut() {
+    event.preventDefault();
+    console.log("click");
+    return localStorage.clear();
   }
 
   function ajaxRequest(method, url, data){
