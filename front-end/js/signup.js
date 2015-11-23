@@ -12,37 +12,19 @@ function submitForm(){
   var data = $(this).serialize();
   console.log(data);
 
-  return ajaxRequest(method, url, data, authenticationSuccessful);
+  return ajaxRequest(method, url, data);
 }
 
-function ajaxRequest(method, url, data, callback) {
+function ajaxRequest(method, url, data) {
   return $.ajax({
     method: method,
     url: url,
-    data: data,
-    beforeSend: setRequestHeader
+    data: data
   }).done(function(data) {
     console.log(data);
-    callback(data);
   })
 }
 
-function setRequestHeader(xhr, settings) {
-  var token = getToken(); // get our token from local storage
-  if(token) return xhr.setRequestHeader ('Authorization', 'Bearer ' + token);
-}
-
-function authenticationSuccessful(data) {
-  if(data.token) return setToken(data.token);
-}
-
-function getToken() {
-  return localStorage.getItem("token");
-}
-
-function setToken(token) {
-  return localStorage.setItem("token", token);
-}
 
 
 
