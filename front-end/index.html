@@ -42,9 +42,23 @@
     <!-- PageLayout goes here -->
     <div class="container"><h1 class="h1new">Cycle</h1>
     <div class="login-background">
-    <!--<div class="container login_circle"></div>-->
-      <div class="image_back"><img class="responsive-img" src="./images/login-logo2.png"></div>
-    </div>
+<!--<div class="container login_circle"></div>-->
+      <div class="image_back"> 
+      <div class="loginform">
+
+      <img class="responsive-img" src="./images/login-logo2.png">
+      
+        <form method="post" action="http://localhost:3000/api/">
+        <input type="text" name="email" id="user-email" placeholder="email address"><br />
+        <input type="text" name="password" id="user-password" placeholder="password">
+        <input type="submit" value="Log in">
+      </form>
+      
+      </div>
+      </div>
+      </div>
+
+  
 
     <footer class="page-footer">
               <div class="container">
@@ -68,6 +82,7 @@
                 </div>
               </div>
             </footer>
+            </div>
 
 
           
