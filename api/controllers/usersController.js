@@ -8,7 +8,7 @@ function usersIndex(req, res) {
 }
 
 function userShow(req, res){
-  User.findById(req.params.id, function(err, user){
+  User.findById(req.params.id).populate('images').exec( function(err, user){
     if (err) return res.status(404).json({message: 'No user found'});
     res.status(200).json({ user: user });
   });

@@ -21,7 +21,7 @@ $(function() {
     var compiledTemplate = underscoreTemplate(data);
     $('#current-user-name').append(compiledTemplate);
 
-    console.log(user.images)
+    console.log(res.user.images[0])
 
   })
   .fail(function(res){
