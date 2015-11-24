@@ -7,7 +7,13 @@ $(function(){
     var user = res.user;
     console.log(user.local.email)
     var data = {
-      email: user.local.email
+      email: user.local.email,
+      first_name: user.first_name,
+      last_name: user.last_name,
+      profile_pic: user.profile_pic,
+      type_of_cyclist: user.type_of_cyclist, 
+      about_me:  user.about_me,
+      city: user.city
     }
     var underscoreTemplate = _.template($('#user-edit-form').html());
     var compiledTemplate = underscoreTemplate(data);
