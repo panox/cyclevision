@@ -14,8 +14,21 @@
   <%= local.email %><br>
   <% if(first_name != null){ %> 
     <%= first_name %>
-  <% } else{ %>
-    No Name
+  <% } %>
+  <% if(last_name != null){ %> 
+    <%= last_name %>
+  <% } %>
+  <% if(profile_pic != null){ %> 
+    <%= profile_pic %>
+  <% } %>
+  <% if(type_of_cyclist != null){ %> 
+    <%= type_of_cyclist %>
+  <% } %>
+  <% if(about_me != null){ %> 
+    <%= about_me %>
+  <% } %>
+  <% if(city != null){ %> 
+    <%= city %>
   <% } %>
   
 
