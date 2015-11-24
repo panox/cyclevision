@@ -1,4 +1,4 @@
-function deleteUser(userId, formInfo) {
+function deleteUser(userId) {
   ajaxRequest("users/" + userId, "delete", null, function(res){
     console.log('delete success');
   });
@@ -48,7 +48,7 @@ $(function(){
 
   $('#delete-user').on('click', function() {
     event.preventDefault();
-    
+    deleteUser(userId);
   });
   
 
