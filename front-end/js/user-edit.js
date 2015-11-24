@@ -1,3 +1,9 @@
+function deleteUser(userId, formInfo) {
+  ajaxRequest("users/" + userId, "delete", null, function(res){
+    console.log('delete success');
+  });
+}
+
 function updateUser(userId, formInfo) {
   ajaxRequest("users/" + userId, "put", formInfo, function(res){
     console.log('update success');
@@ -38,6 +44,11 @@ $(function(){
   $('#user-edit').on('submit', 'form', function() {
     event.preventDefault();
     updateUser(userId, $(this).serialize());
+  });
+
+  $('#delete-user').on('click', function() {
+    event.preventDefault();
+    
   });
   
 
