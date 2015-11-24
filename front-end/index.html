@@ -22,24 +22,54 @@
   <title>Cycle Vision</title>
 </head>
 <body>
+
 <!-- Navbar goes here -->
  <!-- PageLayout goes here -->
   <div class="container">
+  <!-- Navbar goes here -->
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <a href="#" class="brand-logo"> <img src="./images/logo1.png" width="100px"></a>
 
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/pages/user.html" class="profile">Profile</a></li>
+        <li><a href="/pages/images.html">Images</a></li>
+        <li><a href="/pages/users.html">Cyclists</a></li>
+        <li><a href="/pages/signup.html" class="signup">Signup</a></li>
+        <li><a href="#modal1" class="modal-trigger">Login</a> </li>
+
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+       <li><a href="">Profile</a></li>
+       <li><a href="">Images</a></li>
+       <li><a href="">Cyclists</a></li>
+       <li><a href="" class="signup">Signup</a></li>
+       <li><a href="/" class="login">Login</a></li>
+     </nav>
+
+     <!-- PageLayout goes here -->
+     <!-- Modal Structure -->
+     <div id="modal1" class="modal">
+      <div class="modal-content">
+        
+          <form method="post" action="http://localhost:3000/api/">
+            <input type="text" name="email" id="user-email" placeholder="email address"><br />
+            <input type="password" name="password" id="user-password" placeholder="password">
+            <input type="submit" value="Log in" id="submit" class=" modal-action modal-close">
+          </form>
+      </div>
+      </div>
+
+    <div class="container">
     <div class="login-background">
-      <h1 class="h1new">Cycle Scene</h1>
-      <!--<div class="container login_circle"></div>-->
-      
-      <div class="image_back"> 
-        <div class="loginform">
+        <h1 class="h1new">Cycle Scene</h1>
+        <!--<div class="container login_circle"></div>-->
 
-          <img class="responsive-img" src="./images/login-logo2.png">
-          <div id="login">
-            <form method="post" action="http://localhost:3000/api/">
-              <input type="text" name="email" id="user-email" placeholder="email address"><br />
-              <input type="password" name="password" id="user-password" placeholder="password">
-              <input type="submit" value="Log in" id="submit">
-            </form>
+        <div class="image_back"> 
+          <div class="loginform">
+            <img class="responsive-img" src="./images/login-logo2.png">
+            
           </div>
 
         </div>
@@ -65,11 +95,10 @@
         <div class="container"> © 2015 Cycle Vision
           <a class="grey-text text-lighten-4 right" href="#!"></a>
         </div>
-      </div>
-    </footer>
+      </footer>
 
-  </div>
+    </div>
 
-</body>
+  </body>
 
-</html>
+  </html>
