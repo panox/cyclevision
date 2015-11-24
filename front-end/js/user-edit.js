@@ -20,4 +20,9 @@ $(function(){
     $('#user-edit').append(compiledTemplate);
   })
 
+  var formInfo = $('#user-edit-form').serialize();
+  ajaxRequest("users/" + userId, "put", formInfo, function(res){
+    console.log('form')
+  })
+
 });
