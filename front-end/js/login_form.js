@@ -28,6 +28,7 @@ $(function(){
   function logOut() {
     event.preventDefault();
     pressLogout();
+    $(this).remove();
     return localStorage.clear();
   }
 
