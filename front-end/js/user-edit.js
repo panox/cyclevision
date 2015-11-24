@@ -1,7 +1,6 @@
 function updateUser(userId, formInfo) {
-  console.log(userId, formInfo);
   ajaxRequest("users/" + userId, "put", formInfo, function(res){
-    console.log(res);
+    console.log('update success');
   });
 }
 
@@ -32,7 +31,6 @@ function populateUserData(userId) {
 }
 
 $(function(){
-  console.log("USER EDIT LOADED");
   var userId = localStorage.getItem("userId");
 
   populateUserData(userId);
