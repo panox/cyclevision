@@ -13,8 +13,24 @@ function pressLogout() {
 
 $(function(){ 
 
+
+
   if(getToken()) {
     addLogout()
-  }
+  };
+
+  function init(){
+    $('nav a').on('click', checkLoginState);
+  };
+
+  function checkLoginState(){
+    var page = $(this).attr('href');
+    if (!getToken() && page.match(/(users|user|images)/)){
+      event.preventDefault();
+      alert("You no go there!");
+    }
+  };
+
+init()
 
 })
