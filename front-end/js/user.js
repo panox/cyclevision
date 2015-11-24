@@ -27,6 +27,10 @@ $(function() {
       var underscoreTemplate = _.template($('#user-images').html());
       var compiledTemplate = underscoreTemplate(item);
       $('#images').append(compiledTemplate);
+      $('#images').on('click', $("#delete-image"), function(){
+        $.delete(url)
+        .done(function())
+      } )
     })
 
   })
