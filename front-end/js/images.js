@@ -1,7 +1,6 @@
 $(function(){
 
-  $.get("http://localhost:8000/pages/images.html")
-  // http://localhost:3000/api/images
+  $.get("http://localhost:3000/api/images")
   .done(function(res){
     _(res.images).each(function(item) {
       var underscoreTemplate = _.template($('#all-images').html());
@@ -15,5 +14,6 @@ $(function(){
   })
 
   $('.materialboxed').materialbox();
+  
 
 })
