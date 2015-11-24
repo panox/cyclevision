@@ -1,101 +1,97 @@
 <!DOCTYPE html>
-  <html>
-    <head>
-      <!--Import Google Icon Font-->
-      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <link href='https://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-      <link type="text/css" rel="stylesheet" href="./css/materialize.css"  media="screen,projection"/>
-      <link type="text/css" rel="stylesheet" href="./css/main.css"  media="screen,projection"/>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-      <script type="text/javascript" src="../js/login_form.js"></script>
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <title>Cycle Vision</title>
-    </head>
-    <body>
-    <!-- Navbar goes here -->
-    <nav>
-        <div class="nav-wrapper">
-          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-          <a href="#" class="brand-logo"> <img src="./images/logo1.png" width="100px"></a>
+<html>
+<head>
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Exo:400,900' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Quicksand:400,700,300' rel='stylesheet' type='text/css'>
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="./css/materialize.css"  media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="./css/main.css"  media="screen,projection"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script type="text/javascript" src="../js/login_form.js"></script>
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cycle Vision</title>
+</head>
+<body>
+  <!-- Navbar goes here -->
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <a href="#" class="brand-logo"> <img src="./images/logo1.png" width="100px"></a>
 
-          <ul class="right hide-on-med-and-down">
+      <ul class="right hide-on-med-and-down">
 
+
+        <li><a href="">Images</a></li>
+        <li><a href="">Cyclists</a></li>
+        <li><a href="">Signup</a></li>
+        <li><a href="">Login</a></li>
+        <li id="logout"><a href="#">Log out</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+       <li><a href="">Images</a></li>
+       <li><a href="">Cyclists</a></li>
+       <li><a href="">Signup</a></li>
+       <li><a href="">Login</a></li>
+       <li id="logout"><a href="#">Log out</a></li>
+     </ul>
+   </div>
+ </nav>
+ <!-- PageLayout goes here -->
+ <div class="container"><h1 class="h1new">Cycle Scene</h1>
+  <div class="login-background">
+    <!--<div class="container login_circle"></div>-->
     
-            <li><a href="">Images</a></li>
-            <li><a href="">Cyclists</a></li>
-            <li><a href="">Signup</a></li>
-            <li><a href="">Login</a></li>
-            <li id="logout"><a href="#">Log out</a></li>
-          </ul>
-          <ul class="side-nav" id="mobile-demo">
-                 <li><a href="">Images</a></li>
-                 <li><a href="">Cyclists</a></li>
-                 <li><a href="">Signup</a></li>
-                 <li><a href="">Login</a></li>
-                 <li id="logout"><a href="#">Log out</a></li>
-               </ul>
-        </div>
-      </nav>
-    <!-- PageLayout goes here -->
-    <div class="container"><h1 class="h1new">Cycle</h1>
-    <div class="login-background">
-<!--<div class="container login_circle"></div>-->
-      <div class="image_back"> 
+    <div class="image_back"> 
       <div class="loginform">
 
-      <img class="responsive-img" src="./images/login-logo2.png">
-      
-        <form method="post" action="http://localhost:3000/api/">
-        <input type="text" name="email" id="user-email" placeholder="email address"><br />
-        <input type="text" name="password" id="user-password" placeholder="password">
-        <input type="submit" value="Log in">
-      </form>
-      
+        <img class="responsive-img" src="./images/login-logo2.png">
+        <div id="login">
+          <form method="post" action="http://localhost:3000/api/">
+            <input type="text" name="email" id="user-email" placeholder="email address"><br />
+            <input type="text" name="password" id="user-password" placeholder="password">
+            <input type="submit" value="Log in">
+          </form>
+        </div>
+
       </div>
-      </div>
-      </div>
+    </div>
+  </div>
 
   
 
-    <footer class="page-footer">
-              <div class="container">
-                <div class="row">
-                  <div class="col l6 s12">
-                    <h5 class="white-text">Cycle Content</h5>
-                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-                  </div>
-                  <div class="col l4 offset-l2 s12">
-                    
-                    <ul>
-                      <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                      <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                      </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="footer-copyright">
-                <div class="container">© 2015 Cycle Vision
-                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-                </div>
-              </div>
-            </footer>
-            </div>
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Cycle Content</h5>
+          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
 
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">© 2015 Cycle Vision
+        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+      </div>
+    </div>
+  </footer>
+</div>
 
-          
-          
-          
-              
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="./js/mat.js"></script>
+<script type="text/javascript" src="./js/materialize.min.js"></script>
+</body>
 
-
-
-      <!--Import jQuery before materialize.js-->
-      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script type="text/javascript" src="./js/mat.js"></script>
-      <script type="text/javascript" src="./js/materialize.min.js"></script>
-    </body>
-    
-  </html>
+</html>
