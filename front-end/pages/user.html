@@ -19,9 +19,13 @@
 </script>
 
 <script type="text/x-template" id="user-images">
-  <%= title %><br>
-  <img src="<%= image %>"><br>
-  <%= location %>
+  <div class="image">
+    <%= title %><br>
+    <img src="<%= image %>"><br>
+    <%= location %> <br>
+    <button id="delete-image">Delete</button>
+    <button id="update-image">Update</button>
+  </div>
 
 </script>
 
