@@ -12,7 +12,7 @@ function ajaxRequest(url, method, data, callback) {
   }).done(function(res) {
     return callback(res);
   }).fail(function(err) {
-    console.error(err);
+    console.log(err);
   });
 }
 
@@ -40,23 +40,45 @@ $(function() {
     var compiledTemplate = underscoreTemplate(data);
     $('#current-user-name').append(compiledTemplate);
 
-    console.log(res.user.images[0]);
     //get current user images
     _(res.user.images).each(function(item) {
       var underscoreTemplate = _.template($('#user-images').html());
       var compiledTemplate = underscoreTemplate(item);
       $('#images').append(compiledTemplate);
+      //delete images
       $('#images').on('click', "#delete-image", function(){
         event.preventDefault();
         var $image = $(event.target).parent('.image');
-        console.log("click");
-        console.log($image);
         ajaxRequest(apiURL + "images/" + item._id, "DELETE", null, function() {
           $image.remove();
         });
       })
+      //Update images
+      $('#images').on('click', '#update-image', function(){
+        event.preventDefault();
+
+      })
     })
 
   });
+  //Create new image
+  $('#new-image').on('submit', newImage);
+
+  function newImage(){
+    event.preventDefault();
+    var method = $(this).attr("method");
+    var url    = apiURL + "images";
+    var data   = {
+      title: $('#image-title').val(),
+      image: $('#image-url').val(),
+      location: $('#image-location').val(),
+      user: userId
+    }
+    ajaxRequest(url, method, data, function() {
+      var underscoreTemplate = _.template($('#user-images').html());
+      var compiledTemplate = underscoreTemplate(data);
+      $('#images').append(compiledTemplate);
+    });
+  }
 
 });
