@@ -9,5 +9,8 @@ function addLogout() {
 
 $(function(){ 
   
+  if(getToken()) {
+    addLogout()
+  }
 
 })
