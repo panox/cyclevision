@@ -13,4 +13,6 @@ $(function(){
     console.log("Error getting values")
   })
 
+  $('.materialboxed').materialbox();
+
 })
