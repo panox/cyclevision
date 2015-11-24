@@ -12,11 +12,12 @@
 
 <script type="text/x-template" id="all-users">
   <%= local.email %><br>
-  <%= first_name %><br>
-  <%= last_name %><br>
-  <%= type_of_cyclist %><br>
-  <%= about_me %><br>
-  <img src="<%= profile_pic %>">
+  <% if(first_name != null){ %> 
+    <%= first_name %>
+  <% } else{ %>
+    No Name
+  <% } %>
+  
 
 </script>
 
