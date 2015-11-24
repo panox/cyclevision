@@ -63,11 +63,25 @@ $(function() {
     })
 
   });
-  // Create new image
+  //Create new image
   $('#new-image').on('submit', newImage)
 
   function newImage(){
     event.preventDefault();
-    
+
+    var method = $(this).attr("method");
+    var url    = apiURL + "images";
+    var data   = {
+      title: $('#image-title').val(),
+      image: $('#image-url').val(),
+      location: $('#image-location').val(),
+      user: userId
+    }
+
+    ajaxRequest(method, url, data, function(data){
+      var compiledTemplate = underscoreTemplate(data);
+      $('#images').append(compiledTemplate);
+    });
+
   }
 });
