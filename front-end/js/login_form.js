@@ -15,7 +15,7 @@ $(function(){
     var url    = "http://localhost:3000/api/login";
     var data   = $(this).serialize();
 
-    return ajaxRequest(method, url, data)
+    return ajaxReq(method, url, data)
   }
 
   function setToken(token){
@@ -26,27 +26,18 @@ $(function(){
     if (data.token) setToken(data.token);
   }
 
-  function setRequestHeader(xhr, settings) {
-    var token = getToken();
-    if (token) return xhr.setRequestHeader('Authorization','Bearer ' + token);
-  }
-
-  function getToken() {
-    return localStorage.getItem("token");
-  }
-
   function logOut() {
     event.preventDefault();
     console.log("click");
     return localStorage.clear();
   }
 
-  function ajaxRequest(method, url, data){
+  function ajaxReq(method, url, data){
     return $.ajax({
     method: method,
     url: url,
     data: data,
-    beforeSend: setRequestHeader,
+    beforeSend: setHeaders,
     }).done(function(data){
       console.log(data);
       window.localStorage.setItem("userId", data.user._id);
