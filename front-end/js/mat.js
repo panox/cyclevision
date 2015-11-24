@@ -1,10 +1,8 @@
 $(function(){
 $(".button-collapse").sideNav();
+$('.modal-trigger').leanModal();
+$('#modal1').openModal();
+
 
 });
 
-$('.grid').masonry({
-  // options
-  itemSelector: '.grid-item',
-  columnWidth: 200
-});
