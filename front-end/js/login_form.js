@@ -27,7 +27,7 @@ $(function(){
 
   function logOut() {
     event.preventDefault();
-    console.log("click");
+    pressLogout();
     return localStorage.clear();
   }
 
