@@ -14,15 +14,14 @@ $(function() {
            '<li><a href="/" class="login">Login</a></li>' +
          '</ul>' +
          '<ul class="side-nav" id="mobile-demo">' +
-          '<li><a href="">Profile</a></li>' +
-          '<li><a href="">Images</a></li>' +
-          '<li><a href="">Cyclists</a></li>' +
-          '<li><a href="" class="signup">Signup</a></li>' +
-          '<li><a href="" class="login">Login</a></li>' +
+          '<li><a href="/pages/user.html">Profile</a></li>' +
+          '<li><a href="/pages/images.html">Images</a></li>' +
+          '<li><a href="/pages/users.html">Cyclists</a></li>' +
+          '<li><a href="/pages/signup.html" class="signup">Signup</a></li>' +
+          '<li><a href="#" class="login">Login</a></li>' +
         '</ul>' +
       '</div>' +
     '</nav>' 
-
 
 
 
