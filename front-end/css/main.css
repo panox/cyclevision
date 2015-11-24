@@ -1,17 +1,9 @@
-.grid-item { 
-  width: 160px;
-  height: 120px;
-  float: left;
-
-  border-radius: 5px;
-} 
-}
-.grid-item--width2 { 
-  width: 400px; 
-}
-
 body {
   background-color: aliceblue;
+  background-image: url('/images/bike2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
 }
 
 nav {
@@ -61,7 +53,8 @@ nav .nav-wrapper {
       margin-top: 20px;
       padding-top: 20px;
       background-color: lightslategrey;
-      border-radius: 10px; 
+      
+      opacity: 0.8; 
     }
 
     footer.page-footer .footer-copyright {
@@ -69,27 +62,30 @@ nav .nav-wrapper {
       height: 50px;
       line-height: 50px;
       color: rgba(255, 255, 255, 0.8);
-      background-color: hotpink; }
+      background-color: hotpink; 
+    }
+    .h1new {
+      background-color: white;
+      padding: 20px;
+      text-align: center;
+      font-family: Exo;
+      font-size: 60px;
+      color: deeppink;
+      letter-spacing: 15px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;  
+
+    }
 
       .login-background {
         width: 100%;
         border-radius: 10px;
         background-color: lightslategrey;
+        opacity: 0.9;
 
 
       }
-      .h1new {
-        background-color: white;
-        padding: 20px;
-        text-align: center;
-        font-family: Exo;
-        font-size: 60px;
-        color: deeppink;
-        letter-spacing: 15px;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;  
-
-      }
+      
       .small {
         opacity: 1;
 
