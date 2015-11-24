@@ -67,7 +67,7 @@ nav .nav-wrapper {
 
       }
       .h1new {
-        background-color: snowwhite;
+        background-color: white;
         padding: 20px;
         text-align: center;
         font-family: Exo;
@@ -87,7 +87,7 @@ nav .nav-wrapper {
         margin: auto 0;
 
       }
-      .login_circle {
+      login_circle {
         width: 75%;
         height: 500px;
         padding: 50px;
@@ -97,7 +97,7 @@ nav .nav-wrapper {
 
       .loginform {
         position: relative;
-        max-width: 500px;
+        max-width: 600px;
         margin: 60px auto 30px;
         padding: 10px;
         
@@ -107,5 +107,34 @@ nav .nav-wrapper {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-
       }
+
+      input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid deeppink;
+        border-radius: 0;
+        outline: none;
+        height: 3rem;
+        width: 100%;
+        font-size: 1rem;
+        margin: 0 0 15px 0;
+        padding: 0;
+        box-shadow: none;
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+        transition: all .3s;
+        }
+
+        .input-field input[type=text]:focus {
+             border-bottom: 1px solid deeppink;
+             box-shadow: 0 1px 0 0 deeppink;
+        }
+       .input-field input[type=text]:focus + label {
+            color: #000;
+          }
+
+  #submit {
+    text-align: center;
+  }
