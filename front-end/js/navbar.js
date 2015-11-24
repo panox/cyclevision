@@ -1,7 +1,7 @@
 function addLogout() {
   $('.signup').hide();
   $('.login').hide();
-  var logout = '<li id="logout"><a href="#">Log out</a></li>'
+  var logout = '<li id="logout"><a href="/">Log out</a></li>'
   $('.hide-on-med-and-down').append(logout);
   $('#mobile-demo').append(logout);
 }
