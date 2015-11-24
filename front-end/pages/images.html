@@ -1,24 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Current User Page</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script type="text/javascript" src="../js/underscore-min.js"></script>
-  <script type="text/javascript" src="../js/images.js"></script>
+  <title>Image gallery</title>
+  <link type="text/css" rel="stylesheet" href="../css/materialize.css"  media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="../css/main.css"  media="screen,projection"/>
+  
   
 </head>
 <body>
 
+
+
+
+
 <script type="text/x-template" id="all-images">
-  <%= title %><br>
-  <img src="<%= image %>"><br>
-  <%= location %>
+  
+    <div class="col s2">
+      <div class="card">
+        <div class="card-image">
+          <br>
+          <span class="card-title"><%= title %></span>
+          <img src="<%= image %>" width="100px">
+        </div>
+        <div class="card-content">
+          <p><%= location %></p>
+        </div>
+        <div class="card-action">
+          <a href="#">This is a link</a>
+        </div>
+      </div>
 
-</script>
-
-  <div id="images">
-    
   </div>
+ 
+</script>
+   
+  <div class="row" id="images">
+    
+  </div></div>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script type="text/javascript" src="../js/masonry.pkgd.js"></script>
+  <script type="text/javascript" src="../js/underscore-min.js"></script>
+  <script type="text/javascript" src="../js/images.js"></script>
+  <script type="text/javascript" src="../js/mat.js"></script>
 </body>
 </html>

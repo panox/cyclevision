@@ -1,3 +1,15 @@
+.grid-item { 
+  width: 160px;
+  height: 120px;
+  float: left;
+
+  border-radius: 5px;
+} 
+}
+.grid-item--width2 { 
+  width: 400px; 
+}
+
 body {
   background-color: aliceblue;
 }
@@ -125,16 +137,16 @@ nav .nav-wrapper {
         -moz-box-sizing: content-box;
         box-sizing: content-box;
         transition: all .3s;
-        }
+      }
 
-        .input-field input[type=text]:focus {
-             border-bottom: 1px solid deeppink;
-             box-shadow: 0 1px 0 0 deeppink;
-        }
-       .input-field input[type=text]:focus + label {
-            color: #000;
-          }
+      .input-field input[type=text]:focus {
+       border-bottom: 1px solid deeppink;
+       box-shadow: 0 1px 0 0 deeppink;
+     }
+     .input-field input[type=text]:focus + label {
+      color: #000;
+    }
 
-  #submit {
-    text-align: center;
-  }
+    #submit {
+      text-align: center;
+    }
