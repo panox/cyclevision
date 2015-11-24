@@ -1,31 +1,32 @@
-function setHeaders(xhr) {
-  var token = localStorage.getItem('token');
-  if(token) xhr.setRequestHeader('Authorization', 'Bearer ' + token);
-}
+// function setHeaders(xhr) {
+//   var token = localStorage.getItem('token');
+//   if(token) xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+// }
 
-function ajaxRequest(url, method, data, callback) {
-  $.ajax({
-    url: url,
-    method: method,
-    data: data,
-    beforeSend: setHeaders
-  }).done(function(res) {
-    return callback(res);
-  }).fail(function(err) {
-    console.log(err);
-  });
-}
+// function ajaxRequest(url, method, data, callback) {
+//   $.ajax({
+//     url: url,
+//     method: method,
+//     data: data,
+//     beforeSend: setHeaders
+//   }).done(function(res) {
+//     return callback(res);
+//   }).fail(function(err) {
+//     console.log(err);
+//   });
+// }
 
-var apiURL = "http://localhost:3000/api/";
+//var apiURL = "http://localhost:3000/api/";
 
 $(function() {
 
   
   var userId = localStorage.getItem("userId");
-  var url = apiURL + "users/" + userId;
-
+  
+  var url = "users/" + userId;
 
   ajaxRequest(url, "GET", null, function(res){
+
     var user = res.user;
     var data = {
       email: user.local.email,
