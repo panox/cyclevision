@@ -55,6 +55,11 @@ $(function() {
           $image.remove();
         });
       })
+
+      $('#images').on('click', '#update-image', function(){
+        event.preventDefault();
+        
+      })
     })
 
   });
