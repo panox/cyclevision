@@ -1,3 +1,7 @@
+function getToken() {
+  return localStorage.getItem("token");
+}
+
 function setHeaders(xhr) {
   var token = localStorage.getItem('token');
   if(token) xhr.setRequestHeader('Authorization', 'Bearer ' + token);
