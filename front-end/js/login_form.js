@@ -4,11 +4,12 @@ $(function(){
 
   function init(){
   $("form").on("submit", submitForm);
-  $("nav").on("click", '#logout', logOut)
+  $(".modal-content").on("click", '#logout', logOut)
   }
 
   function submitForm(req, res){
     event.preventDefault();
+    console.log('clicked')
 
     var method = $(this).attr("method");
     var url    = "http://localhost:3000/api/login";
