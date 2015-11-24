@@ -4,7 +4,7 @@ $(function() {
      '<nav>' + 
        '<div class="nav-wrapper">' +
          '<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>'+
-         '<a href="#" class="brand-logo"> <img src="./images/logo1.png" width="100px"></a>' +
+         '<a href="#" class="brand-logo"> <img src="/images/logo1.png" width="100px"></a>' +
 
          '<ul class="right hide-on-med-and-down">' +
            '<li><a href="/pages/user.html" class="profile">Profile</a></li>' +
