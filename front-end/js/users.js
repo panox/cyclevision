@@ -1,7 +1,6 @@
 $(function(){
 
-$.get("http://localhost:3000/api/users")
-  .done(function(res){
+  ajaxRequest("users", "GET", null, function(res){
   console.log(res.users)
   _(res.users).each(function(item) {
     source = {
@@ -19,8 +18,5 @@ $.get("http://localhost:3000/api/users")
     $('#users').append(compiledTemplate);
     })
   })
-  .fail(function(res){
-  console.log("Error getting values")
-  });
 
 });
