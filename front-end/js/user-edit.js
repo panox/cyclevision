@@ -32,7 +32,7 @@ function populateUserData(userId) {
 
     var underscoreTemplate = _.template($('#user-edit-form').html());
     var compiledTemplate = underscoreTemplate(data);
-    $('#user-edit').append(compiledTemplate);
+    $('#user-edit').prepend(compiledTemplate);
   });
 }
 
