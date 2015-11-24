@@ -24,6 +24,7 @@ $(function() {
   var userId = localStorage.getItem("userId");
   var url = apiURL + "users/" + userId;
 
+
   ajaxRequest(url, "GET", null, function(res){
     var user = res.user;
     var data = {
@@ -56,6 +57,13 @@ $(function() {
       //Update images
       $('#images').on('click', '#update-image', function(){
         event.preventDefault();
+        var data = {
+          title: $('#update-title').val(),
+          image: $('#update-url').val(),
+          location: $('#update-location').val(),
+          user: userId
+        }
+        ajaxRequest(apiURL + "images/" + item._id, "PUT", data, function(){} )
 
       })
     })

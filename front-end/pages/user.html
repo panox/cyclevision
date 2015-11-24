@@ -24,13 +24,19 @@
     <img src="<%= image %>"><br>
     <%= location %> <br>
     <button id="delete-image">Delete</button>
-    <button id="update-image">Update</button>
+
+    <form method="put" id="update-image">
+      <input type="text" name="title" id="update-title" value="<%= title%>"><br>
+      <input type="text" name="url" id="update-url" value="<%= image %>"><br>
+      <input type="text" name="location" id="update-location" value="<%= location %>"><br>
+      <input type="submit" value="update">
+    </form>
   </div>
 
 </script>
 
   <div id="create-new-image">
-    <form method="post" action="" id="new-image">
+    <form method="post" id="new-image">
       <h2>Add new User</h2>
       <input type="text" name="title" id="image-title" placeholder="Title of Image"><br>
       <input type="text" name="image-url" id="image-url" placeholder="Image URL"><br>
