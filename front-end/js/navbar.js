@@ -1,10 +1,9 @@
 function addLogout() {
   $('.signup').hide();
   $('.login').hide();
-  var underscoreTemplate = _.template($('#logout').html());
-  var compiledTemplate = underscoreTemplate();
-  $('.hide-on-med-and-down').append(compiledTemplate);
-  $('#mobile-demo').append(compiledTemplate);
+  var logout = '<li id="logout"><a href="#">Log out</a></li>'
+  $('.hide-on-med-and-down').append(logout);
+  $('#mobile-demo').append(logout);
 }
 function pressLogout() {
   $('.signup').show();
