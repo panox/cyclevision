@@ -12,7 +12,7 @@ function ajaxRequest(url, method, data, callback) {
   }).done(function(res) {
     return callback(res);
   }).fail(function(err) {
-    console.error(err);
+    console.log(err);
   });
 }
 
@@ -49,8 +49,6 @@ $(function() {
       $('#images').on('click', "#delete-image", function(){
         event.preventDefault();
         var $image = $(event.target).parent('.image');
-        console.log("click");
-        console.log($image);
         ajaxRequest(apiURL + "images/" + item._id, "DELETE", null, function() {
           $image.remove();
         });
@@ -64,11 +62,10 @@ $(function() {
 
   });
   //Create new image
-  $('#new-image').on('submit', newImage)
+  $('#new-image').on('submit', newImage);
 
   function newImage(){
     event.preventDefault();
-
     var method = $(this).attr("method");
     var url    = apiURL + "images";
     var data   = {
@@ -77,11 +74,11 @@ $(function() {
       location: $('#image-location').val(),
       user: userId
     }
-
-    ajaxRequest(method, url, data, function(data){
+    ajaxRequest(url, method, data, function() {
+      var underscoreTemplate = _.template($('#user-images').html());
       var compiledTemplate = underscoreTemplate(data);
       $('#images').append(compiledTemplate);
     });
-
   }
+
 });
