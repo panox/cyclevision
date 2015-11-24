@@ -49,6 +49,7 @@ function imageUpdate(req, res) {
 
     if (req.body.title) image.title = req.body.title;
     if (req.body.image) image.image = req.body.image;
+    if (req.body.loction) image.location = req.body.image.location;
 
   image.save(function(err) {
     if (err) return res.status(500).json({ message: "There is an error updating your image"})
