@@ -1,6 +1,6 @@
 $(function() {
 
-  var navigation = 
+  var navigation =     
      '<nav>' + 
        '<div class="nav-wrapper">' +
          '<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>'+
@@ -21,7 +21,10 @@ $(function() {
           '<li><a href="" class="login">Login</a></li>' +
         '</ul>' +
       '</div>' +
-    '</nav>'
+    '</nav>' 
+
+
+
 
 
   $('body').prepend(navigation)
