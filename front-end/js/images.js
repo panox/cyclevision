@@ -8,9 +8,12 @@ $(function(){
       $('#images').append(compiledTemplate);
     })
 
+    $('.materialboxed').materialbox();
+
   })
   .fail(function(res){
     console.log("Error getting values")
   })
+  
 
 })
