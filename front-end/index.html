@@ -26,6 +26,7 @@
     <li id="logout"><a href="#">Log out</a></li>
   </script>
   <!-- Navbar goes here -->
+
   <nav>
     <div class="nav-wrapper">
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -36,87 +37,71 @@
         <li><a href="/pages/images.html">Images</a></li>
         <li><a href="/pages/users.html">Cyclists</a></li>
         <li><a href="/pages/signup.html" class="signup">Signup</a></li>
-        <li><a href="#modal1" class="modal-trigger waves-effect waves-light btn">Login</a>
-          <div id="modal1" class="modal">
-            <div class="modal-content">
-              <h4>Modal Header</h4>
-              <p>A bunch of text</p>
-            </div>
-            <div class="modal-footer">
-              <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-            </div>
-          </div>
+        <li><a href="#modal1" class="modal-trigger waves-effect waves-light btn">Login</a></li></ul>
 
-        </li>
-      </ul>
       <ul class="side-nav" id="mobile-demo">
        <li><a href="">Profile</a></li>
        <li><a href="">Images</a></li>
        <li><a href="">Cyclists</a></li>
        <li><a href="" class="signup">Signup</a></li>
        <li><a href="/" class="login">Login</a></li>
-      
-
-         <!-- Modal Structure -->
-         <div id="modal1" class="modal">
-           <div class="modal-content">
-             <h4>Modal Header</h4>
-             <p>A bunch of text</p>
-           </div>
-           <div class="modal-footer">
-             <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-           </div>
-         </div>
-     </ul>
-   </div>
- </nav>
- <!-- PageLayout goes here -->
-  <div class="container">
-
-    <div class="login-background">
-      <h1 class="h1new">Cycle Scene</h1>
-      <!--<div class="container login_circle"></div>-->
-      
-      <div class="image_back"> 
-        <div class="loginform">
-
-          <img class="responsive-img" src="./images/login-logo2.png">
-          <div id="login">
-            <form method="post" action="http://localhost:3000/api/">
-              <input type="text" name="email" id="user-email" placeholder="email address"><br />
-              <input type="password" name="password" id="user-password" placeholder="password">
-              <input type="submit" value="Log in" id="submit">
-            </form>
-          </div>
-
-        </div>
+     </nav>
+     <!-- PageLayout goes here -->
+     
+     <!-- Modal Structure -->
+     <div id="modal1" class="modal">
+      <div class="modal-content">
+        
+          <form method="post" action="http://localhost:3000/api/">
+            <input type="text" name="email" id="user-email" placeholder="email address"><br />
+            <input type="password" name="password" id="user-password" placeholder="password">
+            <input type="submit" value="Log in" id="submit">
+          </form>
+      <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
       </div>
     </div>
+    </div>
 
-    <footer class="page-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <h5 class="white-text">Cycle Content</h5>
-            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+    <div class="container">
+    <div class="login-background">
+        <h1 class="h1new">Cycle Scene</h1>
+        <!--<div class="container login_circle"></div>-->
+
+        <div class="image_back"> 
+          <div class="loginform">
+
+            <img class="responsive-img" src="./images/login-logo2.png">
+            
           </div>
-          <div class="col l4 offset-l2 s12">
-            <ul>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-            </ul>
-          </div>
+
         </div>
       </div>
-      <div class="footer-copyright">
-        <div class="container">© 2015 Cycle Vision
-          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+      <!--- Footer -->
+      <footer class="page-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">Cycle Content</h5>
+              <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-    </footer>
+        <div class="footer-copyright">
+          <div class="container">© 2015 Cycle Vision
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+          </div>
+        </div>
+      </footer>
 
-  </div>
+    </div>
 
-</body>
+  </body>
 
-</html>
+  </html>
