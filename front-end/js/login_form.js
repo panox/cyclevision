@@ -4,7 +4,7 @@ $(function(){
 
   function init(){
   $("form").on("submit", submitForm);
-  $(".modal-content").on("click", '#logout', logOut)
+  $("nav").on("click", '#logout', logOut)
   }
 
   function submitForm(req, res){
