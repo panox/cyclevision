@@ -48,7 +48,10 @@ $(function() {
         .done(function(res){
           var location = res.results[0].geometry.location
           var place = {lat: location.lat, lng: location.lng};
-          
+          var marker = new google.maps.Marker({
+            position: place,
+            map: map
+          });
         })
 
 
