@@ -26,7 +26,7 @@ $(function(){
     var page = $(this).attr('href');
     if (!getToken() && page.match(/(users|user|images)/)){
       event.preventDefault();
-      alert("You no go there!");
+      $('#modal1').openModal();
     }
   };
 
