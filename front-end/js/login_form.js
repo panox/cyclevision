@@ -44,9 +44,8 @@ $(function(){
       window.localStorage.setItem("userId", data.user._id);
       addLogout();
       authenticationSuccessful(data);
-    }).fail(function(data) {
-      var alert = '<div>' + data.responseText + '</div>'  
-      $('nav').append(alert);
+    }).fail(function(data) { 
+      $('#error').text(data.responseText)
     });
   }
 
