@@ -7,13 +7,22 @@ function setHeaders(xhr) {
   if(token) xhr.setRequestHeader('Authorization', 'Bearer ' + token);
 }
 
-function ajaxRequest(url, method, data, callback) {
-  $.ajax({
-    url: 'http://localhost:3000/api/' + url,
+function ajaxRequest(url, method, data, callback, isMultipart) {
+  var options = {
+    url: configKeys.url + url,
     method: method,
     data: data,
     beforeSend: setHeaders
-  }).done(function(res) {
+  }
+
+  if(isMultipart){
+    options.cache = false;
+    options.enctype = 'multipart/form-data';
+    options.processData = false;
+    options.contentType = false;
+  }
+
+  $.ajax(options).done(function(res) {
     return callback(res);
   }).fail(function(err) {
     console.error(err);

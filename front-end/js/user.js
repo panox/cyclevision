@@ -44,6 +44,9 @@ $(function() {
 
     //get current user images
     _(res.user.images).each(function(item) {
+      console.log(item)
+      item.image = configKeys.bucketUrl + item.image;
+      console.log(item.image + "  2")
       var underscoreTemplate = _.template($('#user-images').html());
       var compiledTemplate = underscoreTemplate(item);
       $('#images').append(compiledTemplate);
@@ -77,17 +80,20 @@ $(function() {
     event.preventDefault();
     var method = $(this).attr("method");
     var url    = "images";
-    var data   = {
-      title: $('#image-title').val(),
-      image: $('#image-url').val(),
-      location: $('#image-location').val(),
-      user: userId
-    }
+    // var data   = {
+    //   title: $('#image-title').val(),
+    //   image: $('#image-url').val(),
+    //   location: $('#image-location').val(),
+    //   user: userId
+    // }
+
+    var data = new FormData($(this)[0]);
+    data.append("user", userId);
     ajaxRequest(url, method, data, function() {
       var underscoreTemplate = _.template($('#user-images').html());
       var compiledTemplate = underscoreTemplate(data);
       $('#images').append(compiledTemplate);
-    });
+    }, true); // true for isMultipart as we send a file
   }
 
 });
