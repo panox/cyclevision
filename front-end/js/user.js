@@ -48,11 +48,12 @@ $(function() {
       var underscoreTemplate = _.template($('#user-images').html());
       var compiledTemplate = underscoreTemplate(item);
       $('#images').append(compiledTemplate);
-
       //delete images
-      $('#images').on('click', "#delete-image", function(){
+      $('.card-image').on('click', "#delete-image", function(){
         event.preventDefault();
-        var $image = $(event.target).parent('.image');
+
+        var $image = $(event.target).parent('.card-image');
+        console.log(item)
         ajaxRequest("images/" + item._id, "DELETE", null, function() {
           $image.remove();
         });
