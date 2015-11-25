@@ -24,6 +24,15 @@ $(function() {
     '</nav>' 
 
   var modal1 = 
+   '<div id="modal1" class="modal">' +
+    '<div class="modal-content">' + 
+      '<form method="post" action="http://localhost:3000/api/">' +
+'        <input type="text" name="email" id="user-email" placeholder="email address"><br />' +
+'        <input type="password" name="password" id="user-password" placeholder="password">' +
+'        <input type="submit" value="Log in" id="submit" class=" modal-action modal-close">'+
+      '</form>' +
+    '</div>' +
+  '</div>'
   var modal2 =
   var modals = modal1 + modal2
 
