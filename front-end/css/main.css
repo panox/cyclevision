@@ -1,5 +1,9 @@
 body {
   background-color: aliceblue;
+ 
+
+}
+.homepagepic {
   background-image: url('/images/bike2.jpg');
   background-size: cover;
   background-repeat: no-repeat;

@@ -47,11 +47,12 @@ $(function() {
       var underscoreTemplate = _.template($('#user-images').html());
       var compiledTemplate = underscoreTemplate(item);
       $('#images').append(compiledTemplate);
+
       //delete images
       $('#images').on('click', "#delete-image", function(){
         event.preventDefault();
         var $image = $(event.target).parent('.image');
-        ajaxRequest(apiURL + "images/" + item._id, "DELETE", null, function() {
+        ajaxRequest("images/" + item._id, "DELETE", null, function() {
           $image.remove();
         });
       })
@@ -64,7 +65,7 @@ $(function() {
           location: $('#update-location').val(),
           user: userId
         }
-        ajaxRequest(apiURL + "images/" + item._id, "PUT", data, function(){} )
+        ajaxRequest("images/" + item._id, "PUT", data, function(){} )
 
       })
     })
@@ -76,7 +77,7 @@ $(function() {
   function newImage(){
     event.preventDefault();
     var method = $(this).attr("method");
-    var url    = apiURL + "images";
+    var url    = "images";
     var data   = {
       title: $('#image-title').val(),
       image: $('#image-url').val(),
@@ -87,6 +88,8 @@ $(function() {
       var underscoreTemplate = _.template($('#user-images').html());
       var compiledTemplate = underscoreTemplate(data);
       $('#images').append(compiledTemplate);
+
+
     });
   }
 
