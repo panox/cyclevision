@@ -9,7 +9,7 @@ function setHeaders(xhr) {
 
 function ajaxRequest(url, method, data, callback, isMultipart) {
   var options = {
-    url: 'http://localhost:3000/api/' + url,
+    url: configKeys.url + url,
     method: method,
     data: data,
     beforeSend: setHeaders
