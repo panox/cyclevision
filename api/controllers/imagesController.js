@@ -50,15 +50,12 @@ function imageUpdate(req, res) {
 
   Image.findById({_id: id}, function(err, image){
     if(err) return res.status(500).json({ message: "cannot update" });
-    if(!image) return res.status(404).json({ message: "Sorry we cannot locate that image"});
 
     if (req.body.title) image.title = req.body.title;
-    if (req.body.image) image.image = req.body.image;
-    if (req.body.loction) image.location = req.body.image.location;
+    if (req.body.location) image.location = req.body.location;
 
   image.save(function(err) {
     if (err) return res.status(500).json({ message: "There is an error updating your image"})
-
     res.status(201).json({ message: "Image was successfully updated", image: image});
     })
   });
