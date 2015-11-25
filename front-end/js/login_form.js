@@ -44,7 +44,7 @@ $(function(){
       addLogout();
       authenticationSuccessful(data);
     }).fail(function(data) {
-      $('#error').text(data.responseJSON.message)
+      $('.h1new').text(data.responseJSON.message)
     });
   }
 
