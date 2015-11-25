@@ -62,14 +62,16 @@ $(function() {
       //Update images
       $('#update-image').on('submit', function(){
         event.preventDefault();
+        var cardTitle = '#card-' + item.title
         var data = {
           title: $('#update-title').val(),
           image: $('#update-url').val(),
           location: $('#update-location').val(),
           user: userId
         }
-        console.log($('#' + item.title))
-        // ajaxRequest("images/" + item._id, "PUT", data, function(){} )
+        $(cardTitle).find('#title').text(data.title)
+        $(cardTitle).find('#location').text(data.location)
+        ajaxRequest("images/" + item._id, "PUT", data, function(){} )
 
       })
     })
