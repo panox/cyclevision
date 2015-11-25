@@ -44,7 +44,7 @@
           <p><%= location %></p>
         </div>
         <div class="card-action">
-          <a href="#"><%= user.local.email %></a>
+          <a href="/users/<%user._id.html%>" +  ><%= user.first_name + " " + user.last_name  %></a>
         </div>
       </div>
 
