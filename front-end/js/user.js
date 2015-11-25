@@ -42,14 +42,18 @@ $(function() {
     var compiledTemplate = underscoreTemplate(data);
     $('#current-user-name').append(compiledTemplate);
 
+
     //get current user images
     _(res.user.images).each(function(item) {
+
       item.image = configKeys.bucketUrl + item.image;
       var underscoreTemplate = _.template($('#user-images').html());
       var compiledTemplate = underscoreTemplate(item);
       $('#images').append(compiledTemplate);
 
       $('.modal-trigger').leanModal();
+
+      
       //delete images
       $('.card-image').on('click', "#delete-image", function(){
         event.preventDefault();
@@ -69,8 +73,8 @@ $(function() {
         }
         $(cardTitle).find('#title').text(data.title)
         $(cardTitle).find('#location').text(data.location)
-        // ajaxRequest("images/" + item._id, "PUT", data, function(){} )
-
+        ajaxRequest("images/" + item._id, "PUT", data, function(){} )
+        $('.lean-overlay').remove()
       })
     })
 
