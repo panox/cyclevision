@@ -30,7 +30,7 @@ router.route('/images')
 
 router.route('/images/:id')
   .get(imagesController.imageShow)
-  .put(imagesController.imageUpdate)
+  .put(upload.single("image"), imagesController.imageUpdate)
   .delete(imagesController.imageDelete);
 
 module.exports = router

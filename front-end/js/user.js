@@ -44,9 +44,7 @@ $(function() {
 
     //get current user images
     _(res.user.images).each(function(item) {
-      console.log(item)
       item.image = configKeys.bucketUrl + item.image;
-      console.log(item.image + "  2")
       var underscoreTemplate = _.template($('#user-images').html());
       var compiledTemplate = underscoreTemplate(item);
       $('#images').append(compiledTemplate);
@@ -89,10 +87,13 @@ $(function() {
 
     var data = new FormData($(this)[0]);
     data.append("user", userId);
-    ajaxRequest(url, method, data, function() {
+
+    ajaxRequest(url, method, data, function(res) {
+      var image = res.image;
+      image.image = configKeys.bucketUrl + image.image;
       var underscoreTemplate = _.template($('#user-images').html());
-      var compiledTemplate = underscoreTemplate(data);
-      $('#images').append(compiledTemplate);
+      var compiledTemplate = underscoreTemplate(image);
+      $('#images').prepend(compiledTemplate);
     }, true); // true for isMultipart as we send a file
   }
 
