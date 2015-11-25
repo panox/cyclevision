@@ -45,7 +45,8 @@ $(function(){
       addLogout();
       authenticationSuccessful(data);
     }).fail(function(data) {
-      console.log(data.responseJSON.message);
+      var alert = '<div>' + data.responseText + '</div>'  
+      $('nav').append(alert);
     });
   }
 
