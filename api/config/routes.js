@@ -2,9 +2,14 @@ var express  = require('express');
 var router   = express.Router();
 var passport = require("passport");
 
+
+
 var usersController = require('../controllers/usersController');
 var imagesController = require('../controllers/imagesController');
 var authenticationsController = require('../controllers/authenticationsController');
+
+var upload = require(__dirname +"/upload.js")
+
 
 router.post('/signup', authenticationsController.signup);
 router.post('/login', authenticationsController.login);
@@ -20,7 +25,7 @@ router.route('/users/:id')
 
 router.route('/images')
   .get(imagesController.imagesIndex)
-  .post(imagesController.imageCreate);
+  .post(upload.single("image"), imagesController.imageCreate);
 
 
 router.route('/images/:id')
