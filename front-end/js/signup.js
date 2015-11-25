@@ -1,7 +1,7 @@
 $(init);
 
 function init(){ 
-  $('#modal2').on('submit', 'form', submitForm);
+  $('#modal2 form').on('submit', submitForm);
 }
 
 function submitForm(){

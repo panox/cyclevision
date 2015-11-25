@@ -3,7 +3,7 @@ $(function(){
   console.log("loaded")
 
   function init(){
-  $("form").on("submit", submitForm);
+  $('#modal1 form').on("submit", submitForm);
   $("nav").on("click", '#logout', logOut)
   }
 
