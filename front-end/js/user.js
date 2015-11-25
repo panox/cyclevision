@@ -40,6 +40,18 @@ $(function() {
       var compiledTemplate = underscoreTemplate(item);
       $('#images').append(compiledTemplate);
 
+
+        var imageLocation = item.location
+        var googleLocation = "https://maps.googleapis.com/maps/api/geocode/json?address=" + imageLocation
+
+        $.get(googleLocation)
+        .done(function(res){
+          var location = res.results[0].geometry.location
+          var place = {lat: location.lat, lng: location.lng};
+          
+        })
+
+
       $('.modal-trigger').leanModal();
 
       
