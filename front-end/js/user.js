@@ -60,7 +60,7 @@ $(function() {
         });
       })
       //Update images
-      $('#update-image').on('submit', function(){
+      $('#'+item.title).find('#update-image').on('submit', function(){
         event.preventDefault();
         var cardTitle = '#card-' + item.title
         var data = {
@@ -71,7 +71,7 @@ $(function() {
         }
         $(cardTitle).find('#title').text(data.title)
         $(cardTitle).find('#location').text(data.location)
-        ajaxRequest("images/" + item._id, "PUT", data, function(){} )
+        // ajaxRequest("images/" + item._id, "PUT", data, function(){} )
 
       })
     })
