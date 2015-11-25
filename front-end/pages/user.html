@@ -13,6 +13,7 @@
   <script type="text/javascript" src="/js/config.js"></script>
   
   <script type="text/javascript" src="/js/user.js"></script>
+  <script type="text/javascript" src="/js/user-edit.js"></script>
 
   <script type="text/javascript" src="/js/addnav.js"></script>
   <script type="text/javascript" src="/js/mat.js"></script>
@@ -32,25 +33,24 @@
       <div class="card">
         <div class="card-image">
           <br>
-          <div class="card-content">
-            <p><strong><font size="3">Cyclist name | </strong></font><%= first_name %> <%= last_name %></p><br>
-            <p><strong><font size="3">E-mail | </strong></font><%= email %></p><br>
-            <p><strong><font size="3">Type of cyclist | </strong></font><%= type_of_cyclist %></p><br>
-            <p><strong><font size="3">About me | </strong></font><%= about_me %></p><br>
+            <div class="card-content">
+              <p><strong><font size="3">Cyclist name | </strong></font><%= first_name %> <%= last_name %></p><br>
+              <p><strong><font size="3">E-mail | </strong></font><%= email %></p><br>
+              <p><strong><font size="3">Type of cyclist | </strong></font><%= type_of_cyclist %></p><br>
+              <p><strong><font size="3">About me | </strong></font><%= about_me %></p><br>
             <img class="materialboxed" src="<%= profile_pic %>"></div>
           </div>
         </div>
       </div>
     </div>
 </script>
+
 <!--this is the script to display the image and delete button -->
 <script type="text/x-template" id="user-images">
   <div class="image">
-
     <div class="row">
       <div class="col s12 m5">
         <div class="card">
-
           <div class="card-image">
             <p><%= title %></p><br>
             <img src="<%= image %>"><br>
@@ -69,45 +69,45 @@
           </div>
         </div>
 </script>
-<!--this is the script to display modal for the the profile edit info -->
-<script type="text/x-template" id="user-edit-form">
-  <div id="edit-form" class="modal">
-   <div class="modal-content">
 
-     <form method="put" id="edit-form">
+<!--this is the script to display modal for the the profile edit info -->
+<script type="text/x-template" id="user-edit-form-template">
+  <div class="modal-content">
+    <form method="put" id="mod">
+
       <input type="text" name="local.email" id="email" value="<%= email %>">
+
       <input type="password" name="local.password" id="password">
+
       <input type="text" name="first_name" id="first_name" value="<%= first_name %>">
+
       <input type="text" name="last_name" id="last_name" value="<%= last_name %>">
+
       <input type="text" name="profile_pic" id="profile_pic" value="<%= profile_pic %>">
+
       <input type="text" name="type_of_cyclist" id="type_of_cyclist" value="<%= type_of_cyclist %>">
-      <textarea name="about_me" id="about_me"><%= about_me %></textarea>
 
       <input type="text" name="city" id="city" value="<%= city %>">
 
       <input type="submit" value="update" id="submit" class=" modal-action modal-close">
     </form>
   </div>
-</div>
 </script>
 
 <div class="container">
-  <h1>Profile</h1>
-  <div id="current-user-name"></div>
+    <h1>Profile</h1>
+    <div id="current-user-name">
+      
+      <a href="#user-edit-form" id="user-edit-link" class="modal-trigger waves-effect waves-light btn">Edit profile</a>
+      <a href="#create-new-image" class="modal-trigger waves-effect waves-light btn">Add image</a>
 
-  <a href="#edit-form"class="modal-trigger waves-effect waves-light btn">Edit profile</a>
-
-
-  
-  <a href="#create-new-image"class="modal-trigger waves-effect waves-light btn">Add image</a>
-
-
-  <a href="#update-image"class="modal-trigger waves-effect waves-light btn">Edit Image</a>
-  <div id="images">
-
-  </div>
-
+      <a href="#update-image"class="modal-trigger waves-effect waves-light btn">Edit Image</a>
+      </div>
+      <div id="images">
+      </div>
+    </div>
 </div>
+
 <div id="create-new-image" class="modal">
   <div class="modal-content">
     <form method="post" id="new-image">
@@ -119,6 +119,10 @@
       <input type="submit" value="Create Image" class=" modal-action modal-close">
     </form>
   </div>
+</div>
+
+<div id="user-edit-form" class="modal">
+  
 </div>
 
 </body>
