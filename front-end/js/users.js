@@ -29,6 +29,13 @@ $(function(){
       console.log(user)
       var compiledTemplate = underscoreTemplate(data);
       $('#users').append(compiledTemplate);
+
+      _(user.images).each(function(item) {
+        item.image = configKeys.bucketUrl + item.image;
+        var underscoreTemplate = _.template($('#user-images').html());
+        var compiledTemplate = underscoreTemplate(item);
+        $('#images').append(compiledTemplate)
+      });
       localStorage.removeItem("otherUser");
     })
 
