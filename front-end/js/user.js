@@ -44,9 +44,7 @@ $(function() {
 
     //get current user images
     _(res.user.images).each(function(item) {
-      console.log(item)
       item.image = configKeys.bucketUrl + item.image;
-      console.log(item.image + "  2")
       var underscoreTemplate = _.template($('#user-images').html());
       var compiledTemplate = underscoreTemplate(item);
       $('#images').append(compiledTemplate);
