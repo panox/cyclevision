@@ -60,7 +60,7 @@ $(function() {
         });
       })
       //Update images
-      $('#images').on('click', '#'+item.title, function(){
+      $('#update-image').on('submit', function(){
         event.preventDefault();
         var data = {
           title: $('#update-title').val(),
