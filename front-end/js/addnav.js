@@ -23,8 +23,9 @@ $(function() {
       '</div>' +
     '</nav>' 
 
-
-
+  var modal1 = 
+  var modal2 =
+  var modals = modal1 + modal2
 
   $('body').prepend(navigation)
 
