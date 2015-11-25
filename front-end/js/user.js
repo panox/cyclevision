@@ -1,25 +1,13 @@
-// function setHeaders(xhr) {
-//   var token = localStorage.getItem('token');
-//   if(token) xhr.setRequestHeader('Authorization', 'Bearer ' + token);
-// }
+function initMap() {
+  var myLatLng = {lat: 51.5072, lng: 0.1275};
 
-// function ajaxRequest(url, method, data, callback) {
-//   $.ajax({
-//     url: url,
-//     method: method,
-//     data: data,
-//     beforeSend: setHeaders
-//   }).done(function(res) {
-//     return callback(res);
-//   }).fail(function(err) {
-//     console.log(err);
-//   });
-// }
-
-//var apiURL = "http://localhost:3000/api/";
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 10,
+    center: myLatLng
+  });
+}
 
 $(function() {
-
   
   var userId = localStorage.getItem("userId");
   
@@ -43,6 +31,7 @@ $(function() {
     $('#current-user-name').append(compiledTemplate);
 
 
+    initMap()
     //get current user images
     _(res.user.images).each(function(item) {
 
