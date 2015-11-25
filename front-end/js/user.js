@@ -68,7 +68,8 @@ $(function() {
           location: $('#update-location').val(),
           user: userId
         }
-        ajaxRequest("images/" + item._id, "PUT", data, function(){} )
+        console.log($('#' + item.title))
+        // ajaxRequest("images/" + item._id, "PUT", data, function(){} )
 
       })
     })
