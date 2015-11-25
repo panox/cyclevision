@@ -33,9 +33,9 @@ $(function() {
       '</form>' +
     '</div>' +
   '</div>'
-  var modal2 =
-  var modals = modal1 + modal2
+
 
   $('body').prepend(navigation)
+  $('.container').prepend(modal1)
 
 });
