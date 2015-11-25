@@ -14,7 +14,8 @@ function imageCreate(req, res){
     var image = new Image({
       title: req.body.title,
       location: req.body.location,
-      image: req.file.key
+      image: req.file.key,
+      user: req.body.user
     });
 
     image.save(function(err){
