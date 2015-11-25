@@ -25,34 +25,98 @@
   
 </head>
 <body>
-
+<!--this is the script to display the profile image and info -->
 <script type="text/x-template" id="user-template">
-  <%= email %><br>
-  <%= first_name %><br>
-  <%= last_name %><br>
-  <%= type_of_cyclist %><br>
-  <%= about_me %><br>
-  <img src="<%= profile_pic %>">
+  <div class="row">
+    <div class="col s12 m5">
+      <div class="card">
+        <div class="card-image">
+          <br>
+          <div class="card-content">
+            <p><strong><font size="3">Cyclist name | </strong></font><%= first_name %> <%= last_name %></p><br>
+            <p><strong><font size="3">E-mail | </strong></font><%= email %></p><br>
+            <p><strong><font size="3">Type of cyclist | </strong></font><%= type_of_cyclist %></p><br>
+            <p><strong><font size="3">About me | </strong></font><%= about_me %></p><br>
+            <img class="materialboxed" src="<%= profile_pic %>"></div>
+          </div>
+        </div>
+      </div>
+    </div>
 </script>
-
+<!--this is the script to display the image and delete button -->
 <script type="text/x-template" id="user-images">
   <div class="image">
-    <%= title %><br>
-    <img src="<%= image %>"><br>
-    <%= location %> <br>
-    <button id="delete-image">Delete</button>
 
-    <form method="put" id="update-image">
-      <input type="text" name="title" id="update-title" value="<%= title%>"><br>
-      <input type="text" name="location" id="update-location" value="<%= location %>"><br>
-      <input type="submit" value="update">
+    <div class="row">
+      <div class="col s12 m5">
+        <div class="card">
+
+          <div class="card-image">
+            <p><%= title %></p><br>
+            <img src="<%= image %>"><br>
+            <p><%= location %></p> <br>
+            <button id="delete-image">Delete</button>
+          </div>
+        </div>
+        
+        <div id="update-image" class="modal">
+          <div class="modal-content">
+            <form method="put" id="update-image">
+              <input type="text" name="title" id="update-title" value="<%= title%>"><br>
+              <input type="text" name="location" id="update-location" value="<%= location %>"><br>
+              <input type="submit" value="update">
+            </form>
+          </div>
+        </div>
+</script>
+<!--this is the script to display modal for the the profile edit info -->
+<script type="text/x-template" id="user-edit-form">
+  <div id="edit-form" class="modal">
+   <div class="modal-content">
+
+     <form method="put" id="edit-form">
+      <input type="text" name="local.email" id="email" value="<%= email %>">
+      <input type="password" name="local.password" id="password">
+      <input type="text" name="first_name" id="first_name" value="<%= first_name %>">
+      <input type="text" name="last_name" id="last_name" value="<%= last_name %>">
+      <input type="text" name="profile_pic" id="profile_pic" value="<%= profile_pic %>">
+      <input type="text" name="type_of_cyclist" id="type_of_cyclist" value="<%= type_of_cyclist %>">
+      <textarea name="about_me" id="about_me"><%= about_me %></textarea>
+
+      <input type="text" name="city" id="city" value="<%= city %>">
+
+      <input type="submit" value="update" id="submit" class=" modal-action modal-close">
     </form>
   </div>
-
+</div>
 </script>
 
-  <div id="create-new-image">
+<div class="container">
+  <h1>Profile</h1>
+  <div id="current-user-name"></div>
+
+  <a href="#edit-form"class="modal-trigger waves-effect waves-light btn">Edit profile</a>
+
+
+  
+  <a href="#create-new-image"class="modal-trigger waves-effect waves-light btn">Add image</a>
+
+
+  <a href="#update-image"class="modal-trigger waves-effect waves-light btn">Edit Image</a>
+  <div id="images">
+
+  </div>
+
+</div>
+<div id="create-new-image" class="modal">
+  <div class="modal-content">
     <form method="post" id="new-image">
+      <h3>Add new Image</h3>
+      <input type="text" name="title" id="image-title" placeholder="Title of Image"><br>
+      <input type="file" name="image" id="image-url" placeholder="Image URL">
+      <br>
+      <input type="text" name="image-location" id="image-location" placeholder="Image Location"><br>
+      <input type="submit" value="Create Image" class=" modal-action modal-close">    <form method="post" id="new-image">
       <h2>Add new Image</h2>
       <input type="text" name="title" id="image-title" placeholder="Title of Image"><br>
       <input type="file" name="image" id="image-url" placeholder="Image URL"><br>
@@ -60,15 +124,7 @@
       <input type="submit" value="Create Image">
     </form>
   </div>
-
-
-  <div id="current-user-name">
-
-  </div>
-
-  <div id="images">
-    
-  </div>
+</div>
 
 </body>
 </html>
