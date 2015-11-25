@@ -9,13 +9,12 @@ $(function(){
 
   function submitForm(req, res){
     event.preventDefault();
-    console.log('clicked')
 
     var method = $(this).attr("method");
     var url    = "http://localhost:3000/api/login";
     var data   = $(this).serialize();
 
-    return ajaxReq(method, url, data)
+    ajaxReq(method, url, data)
   }
 
   function setToken(token){
