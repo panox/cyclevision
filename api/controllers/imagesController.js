@@ -11,7 +11,11 @@ function imagesIndex(req, res) {
 function imageCreate(req, res){
   User.findById(req.body.user, function(err, user) {
 
-    var image = new Image(req.body);
+    var image = new Image({
+      title: req.body.title,
+      location: req.body.location,
+      image: req.file.key
+    });
 
     image.save(function(err){
       if (err) return res.status(500).json({message: "problem saving image"})
