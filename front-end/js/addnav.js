@@ -17,8 +17,8 @@ $(function() {
           '<li><a href="/pages/user.html">Profile</a></li>' +
           '<li><a href="/pages/images.html">Images</a></li>' +
           '<li><a href="/pages/users.html">Cyclists</a></li>' +
-          '<li><a href="/pages/signup.html" class="signup">Signup</a></li>' +
-          '<li><a href="#" class="login">Login</a></li>' +
+          '<li><a href="#modal2" class="modal-trigger signup">Signup</a> </li>' +
+          '<li><a href="#modal1" class="modal-trigger login">Login</a> </li>' +
         '</ul>' +
       '</div>' +
     '</nav>' 
