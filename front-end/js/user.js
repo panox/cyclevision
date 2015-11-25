@@ -64,14 +64,12 @@ $(function() {
         event.preventDefault();
         var cardTitle = '#card-' + item.title
         var data = {
-          title: $('#update-title').val(),
-          image: $('#update-url').val(),
-          location: $('#update-location').val(),
-          user: userId
+          title: $('#'+item.title).find('#update-title').val(),
+          location: $('#'+item.title).find('#update-location').val()
         }
         $(cardTitle).find('#title').text(data.title)
         $(cardTitle).find('#location').text(data.location)
-        // ajaxRequest("images/" + item._id, "PUT", data, function(){} )
+        ajaxRequest("images/" + item._id, "PUT", data, function(){} )
 
       })
     })
