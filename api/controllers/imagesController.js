@@ -2,7 +2,7 @@ var Image = require('../models/image');
 var User   = require('../models/user');
 
 function imagesIndex(req, res) {
-  Image.find(function(err, images){
+  Image.find().populate('user').exec(function(err, images){
     if (err) return res.status(404).json({ message: "no images found" });
     res.status(200).json({ images: images });
   });
@@ -36,7 +36,7 @@ function imageCreate(req, res){
 function imageShow(req, res) {
   var id = req.params.id;
 
-  Image.findById({_id: id}, function(err, image){
+  Image.findById({_id: id}).populate('user').exec(function(err, image){
     if (err) return res.status(500).json({ message: "Something went wrong!" });
     if (!image) return res.status(404).json({message: "Sorry, we can't locate that image"});
 
