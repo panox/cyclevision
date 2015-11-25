@@ -24,6 +24,7 @@ $(function(){
 
   function authenticationSuccessful(data){
     if (data.token) setToken(data.token);
+    if(window.redirectToPage) window.location = window.redirectToPage
   }
 
   function logOut() {
