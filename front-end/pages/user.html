@@ -49,8 +49,8 @@
 
     <div class="row">
       <div class="col s12 m5">
-        <div class="card">
 
+        <div class="card">
           <div class="card-image">
             <p><%= title %></p><br>
             <img src="<%= image %>"><br>
@@ -59,7 +59,9 @@
           </div>
         </div>
 
-        <div id="update-image" class="modal">
+        <a href="#<%= title %>" class="modal-trigger waves-effect waves-light btn">Edit Image</a>
+
+        <div id="<%= title %>" class="modal">
           <div class="modal-content">
             <form method="put" id="update-image">
               <input type="text" name="title" id="update-title" value="<%= title%>"><br>
@@ -68,8 +70,10 @@
             </form>
           </div>
         </div>
+</div>
+</div>
+</div>
 
-        <a href="#update-image"class="modal-trigger waves-effect waves-light btn">Edit Image</a>
 </script>
 <!--this is the script to display modal for the the profile edit info -->
 <script type="text/x-template" id="user-edit-form">

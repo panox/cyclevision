@@ -48,18 +48,19 @@ $(function() {
       var underscoreTemplate = _.template($('#user-images').html());
       var compiledTemplate = underscoreTemplate(item);
       $('#images').append(compiledTemplate);
+
+      $('.modal-trigger').leanModal();
       //delete images
       $('.card-image').on('click', "#delete-image", function(){
         event.preventDefault();
 
         var $image = $(event.target).parent('.card-image');
-        console.log(item)
         ajaxRequest("images/" + item._id, "DELETE", null, function() {
           $image.remove();
         });
       })
       //Update images
-      $('#images').on('click', '#update-image', function(){
+      $('#images').on('click', '#'+item.title, function(){
         event.preventDefault();
         var data = {
           title: $('#update-title').val(),
