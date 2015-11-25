@@ -32,8 +32,8 @@ function login(req, res, next) {
     "local.email": req.body.email
   }, function(err, user) {
     if (err) return res.status(500).json(err);
-    if (!user) return res.status(403).json({ message: 'No user found.' });
-    if (!user.validPassword(req.body.password)) return res.status(403).json({ message: 'Authentication failed.' });
+    if (!user) return res.status(403).json({ message: 'Wrong Credentials' });
+    if (!user.validPassword(req.body.password)) return res.status(403).json({ message: 'Wrong Credentials' });
 
     var token = jwt.sign(user, secret, { expiresIn: 60*60*24 });
 
