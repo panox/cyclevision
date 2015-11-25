@@ -43,8 +43,8 @@ $(function(){
       window.localStorage.setItem("userId", data.user._id);
       addLogout();
       authenticationSuccessful(data);
-    }).fail(function(data) { 
-      $('#error').text(data.responseText)
+    }).fail(function(data) {
+      $('#error').text(data.responseJSON.message)
     });
   }
 
