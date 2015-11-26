@@ -57,11 +57,22 @@ $(function() {
 
       Geocoder.geocode({ address: item.location }, function(results, status) {
         if(status === 'OK') {
-          markers.push(new google.maps.Marker({
+
+          var marker = new google.maps.Marker({
             position: results[0].geometry.location,
             map: map
-          }));
+          });
 
+          var infowindow = new google.maps.InfoWindow({
+              content: '<img src='+ item.picture +' height="80" width="80">'
+          });
+
+          marker.addListener('click', function() {
+            infowindow.open(map, marker);
+          });
+
+
+          markers.push(marker);
 
           bounds.extend(results[0].geometry.location);
           map.fitBounds(bounds);
