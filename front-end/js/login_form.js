@@ -29,7 +29,8 @@ $(function(){
     event.preventDefault();
     pressLogout();
     $(this).remove();
-    return localStorage.clear();
+    window.location = "/";
+    localStorage.clear();
   }
 
   function ajaxReq(method, url, data){
