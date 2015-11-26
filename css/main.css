@@ -1,7 +1,17 @@
 body {
   background-color: aliceblue;
+ height: 100%;
 
 }
+
+.cont_box {
+  height: auto;
+}
+
+html {
+  height: 100%;
+}
+
 .section {
   width: 200;
   float: left;
@@ -13,6 +23,8 @@ body {
   display:block;
   padding-top: 30px;
   background-repeat: no-repeat;
+  height:100%;
+
 
 }
 
@@ -68,7 +80,11 @@ nav .nav-wrapper {
 
     footer.page-footer {
       background-color: black;
-      opacity: 0.5; 
+      opacity: 0.5;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      
     }
 
     footer.page-footer .footer-copyright {
@@ -76,7 +92,7 @@ nav .nav-wrapper {
       overflow: hidden;
       height: 30px;
       line-height: 20px;
-      color: rgba(255, 255, 255, 0.8);
+      color: white;
       background-color: deeppink; 
     }
     .h1new {
@@ -95,7 +111,7 @@ nav .nav-wrapper {
     .login-background {
       width: 100%;
       border-radius: 10px;
-      background-color: lightslat;
+     
       opacity: 0.9;
 
 
