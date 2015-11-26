@@ -44,11 +44,11 @@ function populateUserData(userId) {
         city: $('#'+'city').val()
       }
       $cardTitle.find('#-email').text(data.email);
-      $cardTitle.find('#-cyclist-name').text(data.first_name + " " + data.last_name);
+      $cardTitle.find('#-cyclist-name').html("<strong> Cyclist Name | </strong>" + data.first_name + " " + data.last_name);
       $cardTitle.find('#-profile_pic').text(data.profile_pic);
-      $cardTitle.find('#-about_me').text(data.about_me);
-      $cardTitle.find('#-type_of_cyclist').text(data.type_of_cyclist);
-      $cardTitle.find('#-city').text(data.city);
+      $cardTitle.find('#-about_me').html("<strong>About me | </strong>" + data.about_me);
+      $cardTitle.find('#-type_of_cyclist').html("<strong> Type of cyclist | </strong>"+ data.type_of_cyclist);
+      $cardTitle.find('#-city').html(data.city);
 
       ajaxRequest("users/" + userId, "PUT", data, function(){} )
 
