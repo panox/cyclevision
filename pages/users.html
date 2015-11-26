@@ -41,9 +41,8 @@
   <p><strong><font size="3">Last Name:</strong></font><% if(last_name != null){ %> 
     <%= last_name %></p><br>
   <% } %>
-  <img src="<% if(profile_pic != null){ %> 
-    <%= profile_pic %>"<br></div>
-  <% } %>
+  
+
   <p><strong><font size="3">Type of Cyclist:</strong></font><% if(type_of_cyclist != null){ %> 
     <%= type_of_cyclist %></p>
   <% } %>
@@ -53,6 +52,10 @@
   <p><strong><font size="3">City:</strong></font><% if(city != null){ %> 
     <%= city %></p>
   <% } %>
+  <img src="<% if(profile_pic != null){ %> 
+    <%= profile_pic %>"<br></div>
+  <% } %>
+  
 </div>
 </div>
 </div>
@@ -65,14 +68,16 @@
 <!--this is the script to display the image and delete button -->
 <script type="text/x-template" id="user-images">
   <div class="image">
-      <div class="col s3">
+      <div class="col s12 m4">
         <div class="card">
         <div class="card medium">
           <br>
           <div class="card-image">
+          <div class="card-content">
             <p><strong><font size="3">Picture Title: </strong></font><%= title %></p><br>
             <img class="materialboxed" src="<%= image %>"><br>
             <p><strong><font size="3">Location:</strong></font><p><%= location %></p> <br>
+            
           </div>
           </div>
         </div>
