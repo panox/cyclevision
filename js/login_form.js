@@ -11,7 +11,7 @@ $(function(){
     event.preventDefault();
 
     var method = $(this).attr("method");
-    var url    = configKeys.ulr + "login";
+    var url    = configKeys.url + "login";
     var data   = $(this).serialize();
 
     ajaxReq(method, url, data)
