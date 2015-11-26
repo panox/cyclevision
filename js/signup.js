@@ -10,7 +10,6 @@ function submitForm(){
   var method = $(this).attr('method');
   var url = 'signup';
   var data = $(this).serialize();
-  console.log(data);
 
   ajaxRequest(url, method, data, function(res) {
     console.log(res)
