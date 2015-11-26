@@ -31,7 +31,7 @@ function populateUserData(userId) {
 
 
     //update user
-    $('.modal-content').find('input#submit').on('click', function() {
+    $('#edit-user').on('submit', function() {
       event.preventDefault();
       var $cardTitle = ($('#current-user-card'))
       var data = {
