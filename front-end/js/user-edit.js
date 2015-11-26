@@ -27,7 +27,7 @@ function populateUserData(userId) {
     var underscoreTemplate = _.template($('#user-edit-form-template').html());
 
     var compiledTemplate = underscoreTemplate(data);
-    $('#user-edit-form').prepend(compiledTemplate);
+    $('#user-edit-form').html(compiledTemplate);
 
 
     //update user
@@ -51,7 +51,7 @@ function populateUserData(userId) {
       $cardTitle.find('#-city').text(data.city);
 
       ajaxRequest("users/" + userId, "PUT", data, function(){} )
-      
+
     });
 
 
