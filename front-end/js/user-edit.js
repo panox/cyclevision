@@ -40,10 +40,23 @@ function populateUserData(userId) {
     $('.modal-content').find('input#submit').on('click', function() {
       event.preventDefault();
       console.log(userId)
+      var $cardTitle = ($('#current-user-card'))
+      console.log($cardTitle)
       var data = {
         email: $('#'+'local.email').val(),
-        first_name: $('#'+'first_name').val()
+        first_name: $('#'+'first_name').val(),
+        last_name: $('#'+'last_name').val(),
+        profile_pic: $('#'+'profile_pic').val(),
+        type_of_cyclist: $('#'+'type_of_cyclist').val(),
+        city: $('#'+'city').val()
       }
+      $cardTitle.find('#local.email').text(data.email);
+      $cardTitle.find('#first_name').text(data.first_name);
+      $cardTitle.find('#last_name').text(data.last_name);
+      $cardTitle.find('#profile_pic').text(data.profile_pic);
+      $cardTitle.find('#type_of_cyclist').text(data.type_of_cyclist);
+      $cardTitle.find('#city').text(data.city);
+
       ajaxRequest("users/" + userId, "PUT", data, function(){} )
       $('.lean-overlay').remove()
     });
