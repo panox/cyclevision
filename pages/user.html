@@ -2,11 +2,7 @@
 <html>
 <head>
   <title>Current User Page</title>
-  <style type="text/css">
-    #map { height: 500px;
-      width: 500px;
-     }
-  </style>
+  
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
   <link type="text/css" rel="stylesheet" href="../css/main.css"  media="screen,projection"/>
@@ -26,7 +22,7 @@
 
   <script type="text/javascript" src="../js/token.js"></script>
   <script type="text/javascript" src="../js/login_form.js"></script>
-    
+
   <script type="text/javascript" src="../js/navbar.js"></script>
   <script type="text/javascript" src="../js/unauthorised-pages.js"></script>
 
@@ -34,114 +30,113 @@
   
 </head>
 <body>
-<!--this is the script to display the profile image and info -->
-<script type="text/x-template" id="user-template">
-  <div class="row">
-    <div class="col s12 m5">
-      <div class="card">
-        <div class="card-image" id="current-user-card">
-          <br>
+  <!--this is the script to display the profile image and info -->
+  <script type="text/x-template" id="user-template">
+    <div class="row">
+      <div class="col s12 m6">
+        <div class="card">
+          <div class="card-image" id="current-user-card">
+            <br>
             <div class="card-content">
               <p id="-cyclist-name"><strong><font size="3">Cyclist name | </strong></font><%= first_name %> <%= last_name %></p><br>
               <p id="-email"><strong><font size="3">E-mail | </strong></font><%= email %></p><br>
               <p id="-type_of_cyclist"><strong><font size="3">Type of cyclist | </strong></font><%= type_of_cyclist %></p><br>
               <p id="-about_me"><strong><font size="3">About me | </strong></font><%= about_me %></p><br>
-            <img class="materialboxed" id="-profile_pic" src="<%= profile_pic %>"></div>
+              <img class="materialboxed" id="-profile_pic" src="<%= profile_pic %>"></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-</script>
+    </script>
 
-<!--this is the script to display the image and delete button -->
-<script type="text/x-template" id="user-images">
-  <div class="image">
-    <div class="row">
-      <div class="col s12 m5">
+    <!--this is the script to display the image and delete button -->
+    <script type="text/x-template" id="user-images">
+      <div class="image">
+        <div class="col s12 m4">
+          <div class="card">
+            <br>
+            <div class="card-image" id="card-<%= title %>">
+              <div class="card-content">
 
-        <div class="card">
-          <div class="card-image" id="card-<%= title %>">
-            <p id="title"><%= title %></p><br>
-            <img src="<%= image %>"><br>
-            <p id="location"><%= location %></p> <br>
-            <button id="delete-image">Delete</button>
-            <a href="#<%= title %>" class="modal-trigger waves-effect waves-light btn">Edit Image</a>
+                <p id="title"><%= title %></p><br>
+                <img src="<%= image %>"><br>
+                <p id="location"><%= location %></p><br>
+                <a href="#<%= title %>" class="modal-trigger waves-effect waves-light-yellow btn">Edit Image</a>
+                <br>
+                <br>
+               <button id="delete-image" class="waves-effect waves-light btn">Delete</button>
+              </div>
+            </div>
+
+            
+            <div id="<%= title %>" class="modal">
+              <div class="modal-content">
+                <form method="put" id="update-image">
+                  <input type="text" name="title" id="<%= title %>-update-title" value="<%= title%>"><br>
+                  <input type="text" name="location" id="<%= title %>-update-location" value="<%= location %>"><br>
+                  <input type="submit" value="update" class=" modal-action modal-close">
+                </form>
+              </div>
+            </div>
+
           </div>
         </div>
+      </script>
 
-        <div id="<%= title %>" class="modal">
+      <!--this is the script to display modal for the the profile edit info -->
+      <script type="text/x-template" id="user-edit-form-template">
+        <div class="modal-content">
+          <form method="put" id="mod edit-user">
+
+            <input type="text" name="local.email" id="email" value="<%= email %>" placeholder="E-mail">
+
+            <input type="text" name="first_name" id="first_name" value="<%= first_name %>" placeholder="First name">
+
+            <input type="text" name="last_name" id="last_name" value="<%= last_name %>" placeholder="Last name">
+
+            <input type="text" name="profile_pic" id="profile_pic" value="<%= profile_pic %>" Profile pic>
+
+            <input type="text" name="type_of_cyclist" id="type_of_cyclist" value="<%= type_of_cyclist %>" placeholder="Type of cyclist">
+
+            <input type="text" name="city" id="city" value="<%= city %>" placeholder="City">
+
+            <input type="text" name="about_me" id="about_me" value="<%= about_me%>" placeholder="About me">
+
+            <input type="submit" value="update" id="submit" class=" modal-action modal-close">
+          </form>
+        </div>
+      </script>
+
+      <div class="container">
+        <h1>Profile</h1>
+        <div id="current-user-name">
+        </div>
+
+        <a href="#user-edit-form" id="user-edit-link" class="modal-trigger waves-effect waves-light btn">Edit profile</a>
+        <a href="#create-new-image" class="modal-trigger waves-effect btn">Add image</a>
+        <br>
+        <br>
+        <h2>Routes</h2>
+        
+        <div id="map"></div>
+        <h1>Images</h1>
+        <div class="row" id="images"></div>
+        <div id="create-new-image" class="modal">
           <div class="modal-content">
-            <form method="put" id="update-image">
-              <input type="text" name="title" id="<%= title %>-update-title" value="<%= title%>"><br>
-              <input type="text" name="location" id="<%= title %>-update-location" value="<%= location %>"><br>
-              <input type="submit" value="update" class=" modal-action modal-close">
+            <form method="post" id="new-image">
+              <h3>Add new Image</h3>
+              <input type="text" name="title" id="image-title" placeholder="Title of Image"><br>
+              <input type="file" name="image" id="image-url" placeholder="Image URL">
+              <br>
+              <input type="text" name="location" id="image-location" placeholder="Image Location"><br>
+              <input type="submit" value="Create Image" class=" modal-action modal-close">
             </form>
           </div>
         </div>
 
-      </div>
-    </div>
-  </div>
+        <div id="user-edit-form" class="modal">
 
-</script>
+        </div>
 
-<!--this is the script to display modal for the the profile edit info -->
-<script type="text/x-template" id="user-edit-form-template">
-  <div class="modal-content">
-    <form method="put" id="mod edit-user">
-
-      <input type="text" name="local.email" id="email" value="<%= email %>" placeholder="E-mail">
-
-      <input type="text" name="first_name" id="first_name" value="<%= first_name %>" placeholder="First name">
-
-      <input type="text" name="last_name" id="last_name" value="<%= last_name %>" placeholder="Last name">
-
-      <input type="text" name="profile_pic" id="profile_pic" value="<%= profile_pic %>" Profile pic>
-
-      <input type="text" name="type_of_cyclist" id="type_of_cyclist" value="<%= type_of_cyclist %>" placeholder="Type of cyclist">
-
-
-      <input type="text" name="city" id="city" value="<%= city %>" placeholder="City">
-
-      <input type="text" name="about_me" id="about_me" value="<%= about_me%>" placeholder="About me">
-
-      <input type="submit" value="update" id="submit" class=" modal-action modal-close">
-    </form>
-  </div>
-</script>
-
-<div class="container">
-    <h1>Profile</h1>
-    <div id="current-user-name">
-      
-      <a href="#user-edit-form" id="user-edit-link" class="modal-trigger waves-effect waves-light btn">Edit profile</a>
-      <a href="#create-new-image" class="modal-trigger waves-effect waves-light btn">Add image</a>
-
-      </div>
-
-      <div id="images"></div>
-
-    </div>
-</div>
-
-<div id="map"></div>
-
-<div id="create-new-image" class="modal">
-  <div class="modal-content">
-    <form method="post" id="new-image">
-      <h3>Add new Image</h3>
-      <input type="text" name="title" id="image-title" placeholder="Title of Image"><br>
-      <input type="file" name="image" id="image-url" placeholder="Image URL">
-      <br>
-      <input type="text" name="location" id="image-location" placeholder="Image Location"><br>
-      <input type="submit" value="Create Image" class=" modal-action modal-close">
-    </form>
-  </div>
-</div>
-
-<div id="user-edit-form" class="modal">
-  
-</div>
-
-</body>
-</html>
+      </body>
+      </html>
