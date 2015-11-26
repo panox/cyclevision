@@ -2,6 +2,9 @@
 
 Cycle hub began as a project for WDI 16, it is a place for cyclists to share their experiences off and on their bikes with a community that understands their passion.
 
+The creators are Alice Dunn, Jayne Hepburn, Kashif Javaid and 
+Panos Papantonopoulos. All students at GA WDI 16 in November 2015.
+
 In order to run Cycle hub you will need to npm install the following:
 
 express
@@ -22,6 +25,8 @@ The wireframes of our website can be found here.
 We wanted the site to look modern and a little quirky to attract the type of cyclist who would be cycling around and enjoy taking pictures to illustrate their route. This would generally be a young urban cyclist, who would cycle on their commute and maybe plan longer routes in their spare time. 
 
 We wanted to keep the site simple to use and have easy access to the functionality on the site. We also have used a log in function so that you are unable to view images without first signing up to the website. 
+
+We created a colorful logo, and have used a dynamic image for the homepage with a bold pink to stand out against a black navbar. The image and look of the website is to attract the young cool cyclist to use our site. 
 
 ### User Stories
 
@@ -55,5 +60,6 @@ We have high aims for what we would like our website to be able to do including:
 
 ###Final Product
 
+This site is fully mobile. It is able to work on screens of all sizes.
 
-
+The final screen shots are below:
