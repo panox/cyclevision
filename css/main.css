@@ -1,15 +1,6 @@
 body {
   background-color: aliceblue;
- height: 100%;
 
-}
-
-.cont_box {
-  height: auto;
-}
-
-html {
-  height: 100%;
 }
 
 .section {
@@ -23,7 +14,7 @@ html {
   display:block;
   padding-top: 30px;
   background-repeat: no-repeat;
-  height:100%;
+  
 
 
 }
@@ -81,9 +72,7 @@ nav .nav-wrapper {
     footer.page-footer {
       background-color: black;
       opacity: 0.5;
-      position: fixed;
-      width: 100%;
-      bottom: 0;
+      
       
     }
 
