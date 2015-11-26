@@ -25,6 +25,11 @@ $(function() {
   
   var url = "users/" + userId;
 
+  var map = new google.maps.Map($('#map')[0], {
+    center: { lat: 51.5073249, lng: -0.1450596 },
+    zoom: 12
+  });
+
   ajaxRequest(url, "GET", null, function(res){
 
     var user = res.user;
@@ -43,8 +48,20 @@ $(function() {
     $('#current-user-name').append(compiledTemplate);
 
 
+    var markers = [];
+    var Geocoder = new google.maps.Geocoder();
+
     //get current user images
-    _(res.user.images).each(function(item) {
+    res.user.images.forEach(function(item) {
+
+      Geocoder.geocode({ address: item.location }, function(results, status) {
+        if(status === 'OK') {
+          markers.push(new google.maps.Marker({
+            position: results[0].geometry.location,
+            map: map
+          }));
+        }
+      });
 
       item.image = configKeys.bucketUrl + item.image;
       var underscoreTemplate = _.template($('#user-images').html());
@@ -74,7 +91,7 @@ $(function() {
         ajaxRequest("images/" + item._id, "PUT", data, function(){} )
         $('.lean-overlay').remove()
       })
-    })
+    });
   
 
   $('.modal-trigger').leanModal();
