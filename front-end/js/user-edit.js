@@ -6,7 +6,6 @@ function deleteUser(userId) {
 
 function updateUser(userId, formInfo) {
   ajaxRequest("users/" + userId, "put", formInfo, function(res){
-    console.log("after request")
     populateUserData(userId);
     console.log('update success');
   });
@@ -36,9 +35,19 @@ function populateUserData(userId) {
     var underscoreTemplate = _.template($('#user-edit-form-template').html());
 
     var compiledTemplate = underscoreTemplate(data);
-
-    console.log(compiledTemplate)
     $('#user-edit-form').prepend(compiledTemplate);
+
+    $('.modal-content').find('input#submit').on('click', function() {
+      event.preventDefault();
+      console.log(userId)
+      var data = {
+        email: $('#'+'local.email').val(),
+        first_name: $('#'+'first_name').val()
+      }
+      ajaxRequest("users/" + userId, "PUT", data, function(){} )
+      $('.lean-overlay').remove()
+    });
+
 
   });
 }
@@ -47,15 +56,9 @@ $(function(){
   var userId = localStorage.getItem("userId");
 
   $("#user-edit-link").on("click", function(){
-    console.log("ho")
     populateUserData(localStorage.getItem("userId"))
   })
-  
 
-  $('#user-edit').on('submit', 'form', function() {
-    event.preventDefault();
-    updateUser(userId, $(this).serialize());
-  });
 
   $('#delete-user').on('click', function() {
     event.preventDefault();

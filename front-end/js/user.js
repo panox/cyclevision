@@ -79,6 +79,8 @@ $(function() {
     })
 
   });
+
+
   //Create new image
   $('#new-image').on('submit', newImage);
 
