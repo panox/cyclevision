@@ -121,7 +121,9 @@ $(function() {
       $('.card-image').on('click', "#delete-image", function(){
         event.preventDefault();
 
-        var $image = $(event.target).parent('.card-image');
+
+        var $image = $(event.target).parent('.card-content').parent('.card-image').parent('.card').parent('div').parent('div');
+        console.log($image)
         ajaxRequest("images/" + item._id, "DELETE", null, function() {
           $image.remove();
         });
