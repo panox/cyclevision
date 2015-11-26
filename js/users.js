@@ -37,6 +37,10 @@ $(function(){
         $('#images').append(compiledTemplate)
       });
       // localStorage.removeItem("otherUser");
-    })
+
+      $('.materialboxed').materialbox();
+    });
+
+
 
 });

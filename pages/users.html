@@ -57,6 +57,7 @@
 </div>
 </div>
 </div>
+</div>
   
 
 </script>
@@ -64,13 +65,12 @@
 <!--this is the script to display the image and delete button -->
 <script type="text/x-template" id="user-images">
   <div class="image">
-    <div class="row">
-      <div class="col s12 m5">
+      <div class="col s3">
         <div class="card">
-
+          <br>
           <div class="card-image">
             <p><strong><font size="3">Picture Title: </strong></font><%= title %></p><br>
-            <img src="<%= image %>"><br>
+            <img class="materialboxed" src="<%= image %>"><br>
             <p><strong><font size="3">Location:</strong></font><p><%= location %></p> <br>
           </div>
         </div>
@@ -80,13 +80,15 @@
 
 </script>
 
-  <div id="users">
+<div class="container">
+
+  <div id="users"> 
     
   </div>
 
-  <div id="images">
+  <div class="row" id="images">
     
   </div>
-
+</div>
 </body>
 </html>
