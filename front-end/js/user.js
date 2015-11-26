@@ -51,8 +51,6 @@ $(function() {
       var compiledTemplate = underscoreTemplate(item);
       $('#images').append(compiledTemplate);
 
-      $('.modal-trigger').leanModal();
-
       
       //delete images
       $('.card-image').on('click', "#delete-image", function(){
@@ -77,7 +75,10 @@ $(function() {
         $('.lean-overlay').remove()
       })
     })
+  
 
+  $('.modal-trigger').leanModal();
+  
   });
   //Create new image
   $('#new-image').on('submit', newImage);
