@@ -7,6 +7,18 @@ body {
   width: 200;
   float: left;
 }
+.btn {
+  color:black;
+  background-color: white;
+  
+
+}
+.btn:hover {
+  color: white;
+  background-color: deeppink;
+  transition: opacity .205s ease-in;
+
+}
 
 .homepagepic {
   background-image: url('../images/bike5.jpg');
@@ -14,9 +26,15 @@ body {
   display:block;
   padding-top: 30px;
   background-repeat: no-repeat;
-  
 
+}
 
+#map {
+  position: relative;
+  padding-bottom: 75%;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
 nav {
@@ -42,155 +60,151 @@ nav ul li:hover, nav ul li.active {
 nav .nav-wrapper {
   position: relative;
   height: 100%; 
+}
+nav .nav-wrapper i {
+  display: block;
+  font-size: 2rem;
 
 }
-  nav .nav-wrapper i {
-    display: block;
-    font-size: 2rem;
+nav .brand-logo {
+  position: absolute;
+  color: #fff;
+  display: inline-block;
+  font-size: 2.1rem;
+  padding: 10px;
+  white-space: nowrap; 
 
+}
 
+@media only screen and (min-width: 993px) {
+  nav .brand-logo {
+    position: relative;
+    padding: 10px 30px;
   }
+}
+
+footer.page-footer {
+  background-color: black;
+  opacity: 0.5;
 
 
-    nav .brand-logo {
-      position: absolute;
-      color: #fff;
-      display: inline-block;
-      font-size: 2.1rem;
-      padding: 10px;
-      white-space: nowrap; 
+}
 
-    }
+footer.page-footer .footer-copyright {
+  padding: 20;
+  overflow: hidden;
+  height: 30px;
+  line-height: 20px;
+  color: white;
+  background-color: deeppink; 
+}
+.h1new {
+  margin-top: 0px;
+  width: 100%;
+  background-color: ;
 
-    @media only screen and (min-width: 993px) {
-      nav .brand-logo {
-        position: relative;
-        padding: 10px 30px;
-      }
-    }
+  text-align: center;
+  font-family: Exo;
+  font-size: 60px;
+  color: deeppink;
+  letter-spacing: 15px;
 
-    footer.page-footer {
-      background-color: black;
-      opacity: 0.5;
-      
-      
-    }
+}
 
-    footer.page-footer .footer-copyright {
-      padding: 20;
-      overflow: hidden;
-      height: 30px;
-      line-height: 20px;
-      color: white;
-      background-color: deeppink; 
-    }
-    .h1new {
-      margin-top: 0px;
-      width: 100%;
-      background-color: ;
-      
-      text-align: center;
-      font-family: Exo;
-      font-size: 60px;
-      color: deeppink;
-      letter-spacing: 15px;
+.login-background {
+  width: 100%;
+  border-radius: 10px;
 
-    }
-
-    .login-background {
-      width: 100%;
-      border-radius: 10px;
-     
-      opacity: 0.9;
+  opacity: 0.9;
 
 
-    }
-    .wheel_right {
-      position: relative;
-      display: inline-block;
-      max-width: 300px;
-    }
+}
+.wheel_right {
+  position: relative;
+  display: inline-block;
+  max-width: 300px;
+}
 
-    .wheel_left {
-      position: relative;
-      display: inline-block;
-      max-width: 300px;
-    }
-
-
-    .small {
-      opacity: 1;
-
-    }
-    .image_back {
-      width: inherit;
-      margin: auto 0;
-
-    }
-    login_circle {
-      width: 75%;
-      height: 500px;
-      padding: 50px;
-      border-radius: 50px;
-      background-color: aliceblue;
-    }
-
-    .loginform {
-      position: relative;
-      max-width: 800px;
-
-      margin: 60px auto 30px;
-      padding: 10px;
-      text-align: center;
-
-    }
-    #login {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
-      background-color: transparent;
-      border: none;
-      border-bottom: 1px solid deeppink;
-      border-radius: 0;
-      outline: none;
-      height: 3rem;
-      width: 100%;
-      font-size: 1rem;
-      margin: 0 0 15px 0;
-      padding: 0;
-      box-shadow: none;
-      -webkit-box-sizing: content-box;
-      -moz-box-sizing: content-box;
-      box-sizing: content-box;
-      transition: all .3s;
-    }
-
-    .input-field input[type=text]:focus {
-     border-bottom: 1px solid deeppink;
-     box-shadow: 0 1px 0 0 deeppink;
-   }
-   .input-field input[type=text]:focus + label {
-    color: #000;
-  }
-
-  #submit {
-    text-align: center;
-  }
+.wheel_left {
+  position: relative;
+  display: inline-block;
+  max-width: 300px;
+}
 
 
-  .wheel {
-    -webkit-animation:spin 30s linear infinite;
-    -moz-animation:spin 30s linear infinite;
-    animation:spin 30s linear infinite;
-  }
+.small {
+  opacity: 1;
 
-  @-moz-keyframes spin { 100% { -moz-transform: rotate(-360deg); } }
-  @-webkit-keyframes spin { 100% { -webkit-transform: rotate(-360deg); } }
-  @keyframes spin { 100% { -webkit-transform: rotate(-360deg); transform:rotate(-360deg); } }
+}
+.image_back {
+  width: inherit;
+  margin: auto 0;
+
+}
+login_circle {
+  width: 75%;
+  height: 500px;
+  padding: 50px;
+  border-radius: 50px;
+  background-color: aliceblue;
+}
+
+.loginform {
+  position: relative;
+  max-width: 800px;
+
+  margin: 60px auto 30px;
+  padding: 10px;
+  text-align: center;
+
+}
+#login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid deeppink;
+  border-radius: 0;
+  outline: none;
+  height: 3rem;
+  width: 100%;
+  font-size: 1rem;
+  margin: 0 0 15px 0;
+  padding: 0;
+  box-shadow: none;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  transition: all .3s;
+}
+
+.input-field input[type=text]:focus {
+ border-bottom: 1px solid deeppink;
+ box-shadow: 0 1px 0 0 deeppink;
+}
+.input-field input[type=text]:focus + label {
+  color: #000;
+}
+
+#submit {
+  text-align: center;
+}
+
+
+.wheel {
+  -webkit-animation:spin 30s linear infinite;
+  -moz-animation:spin 30s linear infinite;
+  animation:spin 30s linear infinite;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(-360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(-360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(-360deg); transform:rotate(-360deg); } }
 
 
 
