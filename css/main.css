@@ -8,7 +8,7 @@ body {
 }
 
 .homepagepic {
-  background-image: url('/images/bike5.jpg');
+  background-image: url('/cyclevision/images/bike5.jpg');
   background-size: cover;
   display:block;
   padding-top: 30px;
