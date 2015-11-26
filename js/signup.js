@@ -8,23 +8,16 @@ function submitForm(){
   event.preventDefault();
 
   var method = $(this).attr('method');
-  var url = configKeys.url + 'signup';
+  var url = 'signup';
   var data = $(this).serialize();
   console.log(data);
 
-  return ajaxRequest(method, url, data);
-}
-
-function ajaxRequest(method, url, data) {
-  return $.ajax({
-    method: method,
-    url: url,
-    data: data
-  }).done(function(data) {
-    window.localStorage.setItem("token", token);
-    window.localStorage.setItem("userId", data.user._id);
+  ajaxRequest(url, method, data, function(res) {
+    console.log(res)
+    window.localStorage.setItem("token", res.token);
+    window.localStorage.setItem("userId", res.user._id);
     addLogout();
-  })
+  });
 }
 
 
