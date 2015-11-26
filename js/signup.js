@@ -1,7 +1,3 @@
-function setToken(token){
-  return window.localStorage.setItem("token", token);
-}
-
 $(init);
 
 function init(){ 
@@ -25,7 +21,9 @@ function ajaxRequest(method, url, data) {
     url: url,
     data: data
   }).done(function(data) {
-    console.log(data);
+    window.localStorage.setItem("token", token);
+    window.localStorage.setItem("userId", data.user._id);
+    addLogout();
   })
 }
 
