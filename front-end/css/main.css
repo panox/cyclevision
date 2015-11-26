@@ -1,11 +1,14 @@
 body {
   background-color: aliceblue;
+
  
 
 }
 .homepagepic {
   background-image: url('/images/bike2.jpg');
   background-size: cover;
+  display:block;
+  padding-top: 30px;
   background-repeat: no-repeat;
 
 }
@@ -17,6 +20,8 @@ nav {
   height: 120px;
   line-height: 120px; 
   letter-spacing: 5px;
+  padding-bottom: 0px;
+
 }
 nav a {
   color: deeppink; 
@@ -69,6 +74,7 @@ nav .nav-wrapper {
       background-color: hotpink; 
     }
     .h1new {
+      margin-top: 0px;
       background-color: white;
       padding: 20px;
       text-align: center;
@@ -150,8 +156,7 @@ nav .nav-wrapper {
     #submit {
       text-align: center;
     }
-
-
+ 
 
     .responsive-img {
         -webkit-animation:spin 30s linear infinite;
