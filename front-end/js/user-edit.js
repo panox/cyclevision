@@ -52,6 +52,10 @@ function populateUserData(userId) {
 
       ajaxRequest("users/" + userId, "PUT", data, function(){} )
 
+      $('.modal-content').closeModal({
+        dismissible: true
+      });
+
     });
 
 
@@ -64,7 +68,6 @@ $(function(){
   $("#user-edit-link").on("click", function(){
     populateUserData(localStorage.getItem("userId"))
   })
-
 
   $('#delete-user').on('click', function() {
     event.preventDefault();
