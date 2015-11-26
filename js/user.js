@@ -39,13 +39,45 @@ $(function() {
       last_name: user.last_name,
       profile_pic: user.profile_pic,
       type_of_cyclist: user.type_of_cyclist,
-      about_me: user.about_me
+      about_me: user.about_me,
+      city: user.city
     }
 
     var template = _.template($( '#user-template' ).html());
     var underscoreTemplate = _.template($('#user-template').html());
     var compiledTemplate = underscoreTemplate(data);
     $('#current-user-name').append(compiledTemplate);
+
+
+    var underscoreTemplate = _.template($('#user-edit-form-template').html());
+
+    var compiledTemplate = underscoreTemplate(data);
+    $('#user-edit-form').html(compiledTemplate);
+
+
+    //update user
+    $('.modal-content').find('input#submit').on('click', function() {
+      event.preventDefault();
+      var $cardTitle = ($('#current-user-card'))
+      var data = {
+        email: $('#'+'local.email').val(),
+        first_name: $('#'+'first_name').val(),
+        last_name: $('#'+'last_name').val(),
+        profile_pic: $('#'+'profile_pic').val(),
+        type_of_cyclist: $('#'+'type_of_cyclist').val(),
+        about_me: $('#'+'about_me').val(),
+        city: $('#'+'city').val()
+      }
+      $cardTitle.find('#-email').text(data.email);
+      $cardTitle.find('#-cyclist-name').html("<strong> Cyclist Name | </strong>" + data.first_name + " " + data.last_name);
+      $cardTitle.find('#-profile_pic').text(data.profile_pic);
+      $cardTitle.find('#-about_me').html("<strong>About me | </strong>" + data.about_me);
+      $cardTitle.find('#-type_of_cyclist').html("<strong> Type of cyclist | </strong>"+ data.type_of_cyclist);
+      $cardTitle.find('#-city').html(data.city);
+
+      ajaxRequest("users/" + userId, "PUT", data, function(){} )
+
+    });
 
 
     var markers = [];
