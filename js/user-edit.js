@@ -1,6 +1,5 @@
 function deleteUser(userId) {
   ajaxRequest("users/" + userId, "delete", null, function(res){
-    console.log('delete success');
   });
 }
 
