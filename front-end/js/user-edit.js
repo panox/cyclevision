@@ -6,12 +6,15 @@ function deleteUser(userId) {
 
 function updateUser(userId, formInfo) {
   ajaxRequest("users/" + userId, "put", formInfo, function(res){
+    console.log("after request")
+    populateUserData(userId);
     console.log('update success');
   });
 }
 
 function populateUserData(userId) {
   ajaxRequest("users/" + userId, "get", null, function(res) {
+    console.log("res", res)
     var user = res.user;
 
     var data = {
@@ -30,16 +33,24 @@ function populateUserData(userId) {
     }
     */
 
-    var underscoreTemplate = _.template($('#user-edit-form').html());
+    var underscoreTemplate = _.template($('#user-edit-form-template').html());
+
     var compiledTemplate = underscoreTemplate(data);
-    $('#user-edit').prepend(compiledTemplate);
+
+    console.log(compiledTemplate)
+    $('#user-edit-form').prepend(compiledTemplate);
+
   });
 }
 
 $(function(){
   var userId = localStorage.getItem("userId");
 
-  populateUserData(userId);
+  $("#user-edit-link").on("click", function(){
+    console.log("ho")
+    populateUserData(localStorage.getItem("userId"))
+  })
+  
 
   $('#user-edit').on('submit', 'form', function() {
     event.preventDefault();
