@@ -11,7 +11,7 @@ $(function(){
     
 
 
-      $('#'+item.user.last_name).on('click', function(){
+      $('#'+ item._id).on('click', function(){
         event.preventDefault();
         data = item.user;
         console.log(data);
