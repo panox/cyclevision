@@ -47,9 +47,11 @@ As a group we began with a much more ambitious outlook, and we were unable to im
 
 We have high aims for what we would like our website to be able to do including:
 
-- choosing which images to show on a map, so that routes would be available
+- choosing which images to show on a map, so that routes would be available. Eventually we would like to be able to have each user being able to display several routes.
 - Messaging feature between users
-- 
+- Comments on images
+- Search for #'s within titles. Making the whole site searchable.
+- Ability to upload and view videos.
 
 ###Final Product
 
