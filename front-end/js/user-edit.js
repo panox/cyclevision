@@ -51,7 +51,7 @@ function populateUserData(userId) {
       $cardTitle.find('#-city').text(data.city);
 
       ajaxRequest("users/" + userId, "PUT", data, function(){} )
-      $('.lean-overlay').remove()
+      
     });
 
 
