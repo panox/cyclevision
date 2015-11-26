@@ -17,7 +17,7 @@ $(function(){
         console.log(data);
         ajaxRequest("images", "get", data, function(res){
           window.localStorage.setItem("otherUser", data._id);
-          return window.location.assign("/pages/users.html")
+          return window.location.assign("./users.html")
         })
       })
 

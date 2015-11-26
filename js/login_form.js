@@ -29,7 +29,7 @@ $(function(){
     event.preventDefault();
     pressLogout();
     $(this).remove();
-    window.location = "/";
+    window.location = "/cyclevision";
     localStorage.clear();
   }
 
