@@ -1,7 +1,5 @@
 $(function() {
-
-  $.get("http://localhost:3000/api/images/5652162845ace0f652a568a3")
-  .done(function(res){
+  ajaxRequest('images/5656dda330136278059b9b5b', "get", false, function(res){
     var imageLocation = res.image.location
     var secondHome = "https://maps.googleapis.com/maps/api/geocode/json?address=" + imageLocation
     var picture = res.image.image
@@ -37,9 +35,6 @@ $(function() {
     })
 
 
-  })
-  .fail(function(res){
-    console.log("Error getting values")
   })
 
 });
