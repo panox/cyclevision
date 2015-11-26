@@ -31,14 +31,14 @@
   <div class="row">
     <div class="col s12 m5">
       <div class="card">
-        <div class="card-image">
+        <div class="card-image" id="current-user-card">
           <br>
             <div class="card-content">
-              <p><strong><font size="3">Cyclist name | </strong></font><%= first_name %> <%= last_name %></p><br>
-              <p><strong><font size="3">E-mail | </strong></font><%= email %></p><br>
-              <p><strong><font size="3">Type of cyclist | </strong></font><%= type_of_cyclist %></p><br>
-              <p><strong><font size="3">About me | </strong></font><%= about_me %></p><br>
-            <img class="materialboxed" src="<%= profile_pic %>"></div>
+              <p id="-cyclist-name"><strong><font size="3">Cyclist name | </strong></font><%= first_name %> <%= last_name %></p><br>
+              <p id="-email"><strong><font size="3">E-mail | </strong></font><%= email %></p><br>
+              <p id="-type_of_cyclist"><strong><font size="3">Type of cyclist | </strong></font><%= type_of_cyclist %></p><br>
+              <p id="-about_me"><strong><font size="3">About me | </strong></font><%= about_me %></p><br>
+            <img class="materialboxed" id="-profile_pic" src="<%= profile_pic %>"></div>
           </div>
         </div>
       </div>
@@ -80,11 +80,9 @@
 <!--this is the script to display modal for the the profile edit info -->
 <script type="text/x-template" id="user-edit-form-template">
   <div class="modal-content">
-    <form method="put" id="mod">
+    <form method="put" id="mod edit-user">
 
       <input type="text" name="local.email" id="email" value="<%= email %>" placeholder="E-mail">
-
-      <input type="password" name="local.password" id="password" placeholder="Password">
 
       <input type="text" name="first_name" id="first_name" value="<%= first_name %>" placeholder="First name">
 
@@ -94,7 +92,10 @@
 
       <input type="text" name="type_of_cyclist" id="type_of_cyclist" value="<%= type_of_cyclist %>" placeholder="Type of cyclist">
 
+
       <input type="text" name="city" id="city" value="<%= city %>" placeholder="City">
+
+      <input type="text" name="about_me" id="about_me" value="<%= about_me%>" placeholder="About me">
 
       <input type="submit" value="update" id="submit" class=" modal-action modal-close">
     </form>

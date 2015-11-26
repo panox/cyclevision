@@ -80,6 +80,8 @@ $(function() {
   $('.modal-trigger').leanModal();
   
   });
+
+
   //Create new image
   $('#new-image').on('submit', newImage);
 
