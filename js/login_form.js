@@ -11,7 +11,7 @@ $(function(){
     event.preventDefault();
 
     var method = $(this).attr("method");
-    var url    = "http://localhost:3000/api/login";
+    var url    = configKeys.ulr + "login";
     var data   = $(this).serialize();
 
     ajaxReq(method, url, data)
