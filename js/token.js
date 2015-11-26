@@ -25,5 +25,6 @@ function ajaxRequest(url, method, data, callback, isMultipart) {
   $.ajax(options).done(function(res) {
     return callback(res);
   }).fail(function(err) {
+    $('nav').after('<h2>' + err.responseJSON.message + '</h2>')
   });
 }
