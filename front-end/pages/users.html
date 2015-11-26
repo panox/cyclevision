@@ -28,25 +28,35 @@
 <h1>Users page</h1>
 
 <script type="text/x-template" id="all-users">
-  <%= local.email %><br>
-  <% if(first_name != null){ %> 
-    <%= first_name %><br>
+<div class="row">
+  <div class="col s12 m5">
+    <div class="card">
+      <div class="card-image">
+        <br>
+          <div class="card-content">
+  <p><strong><font size="3">Email Address: </strong></font><%= local.email %></p>
+  <p><strong><font size="3">First Name:</strong></font><% if(first_name != null){ %> 
+    <%= first_name %></p>
   <% } %>
-  <% if(last_name != null){ %> 
-    <%= last_name %><br>
+  <p><strong><font size="3">Last Name:</strong></font><% if(last_name != null){ %> 
+    <%= last_name %></p><br>
   <% } %>
-  <% if(profile_pic != null){ %> 
-    <%= profile_pic %><br>
+  <img src="<% if(profile_pic != null){ %> 
+    <%= profile_pic %>"<br></div>
   <% } %>
-  <% if(type_of_cyclist != null){ %> 
-    <%= type_of_cyclist %><br>
+  <p><strong><font size="3">Type of Cyclist:</strong></font><% if(type_of_cyclist != null){ %> 
+    <%= type_of_cyclist %></p>
   <% } %>
-  <% if(about_me != null){ %> 
-    <%= about_me %><br>
+  <p><strong><font size="3">Bio:</strong></font><% if(about_me != null){ %> 
+    <%= about_me %></p>
   <% } %>
-  <% if(city != null){ %> 
-    <%= city %><br>
+  <p><strong><font size="3">City:</strong></font><% if(city != null){ %> 
+    <%= city %></p>
   <% } %>
+</div>
+</div>
+</div>
+</div>
   
 
 </script>
@@ -59,9 +69,9 @@
         <div class="card">
 
           <div class="card-image">
-            <p><%= title %></p><br>
+            <p><strong><font size="3">Picture Title: </strong></font><%= title %></p><br>
             <img src="<%= image %>"><br>
-            <p><%= location %></p> <br>
+            <p><strong><font size="3">Location:</strong></font><p><%= location %></p> <br>
           </div>
         </div>
       </div>

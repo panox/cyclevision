@@ -36,7 +36,7 @@ $(function(){
         var compiledTemplate = underscoreTemplate(item);
         $('#images').append(compiledTemplate)
       });
-      localStorage.removeItem("otherUser");
+      // localStorage.removeItem("otherUser");
     })
 
 });
