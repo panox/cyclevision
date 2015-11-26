@@ -36,9 +36,18 @@ We wanted to keep the site simple to use and have easy access to the functionali
 
 ###Achievements
 
-As a 
+As a group we began with a much more ambitious outlook, and we were unable to implement some of the features we initally spoke aboout. However, we did implement the following:
+
+- image upload
+- token authentication
+- pinning images to a map
+
 
 ###Aims for the future
+
+We have high aims for what we would like our website to be able to do including:
+
+- 
 
 ###Final Product
 
