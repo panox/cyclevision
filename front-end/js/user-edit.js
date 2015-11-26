@@ -52,9 +52,17 @@ function populateUserData(userId) {
 
       ajaxRequest("users/" + userId, "PUT", data, function(){} )
 
-      $('.modal-content').closeModal({
-        dismissible: true
+      $('.modal-content').closeModal();
+
+      $overlay = $('<div class="lean-overlay"></div>')
+      $overlay.css({ display : "block", opacity : 0 });
+      $modal.css({
+        display : "block",
+        opacity: 0
       });
+
+      $overlay.velocity({opacity: options.opacity}, {duration: options.in_duration, queue: false, ease: "easeOutCubic"});
+      $modal.data('associated-overlay', $overlay[0]);
 
     });
 
