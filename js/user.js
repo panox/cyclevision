@@ -64,7 +64,7 @@ $(function() {
           });
 
           var infowindow = new google.maps.InfoWindow({
-              content: '<img src='+ item.picture +' height="80" width="80">'
+              content: '<img src='+ item.image +' height="80" width="80">'
           });
 
           marker.addListener('click', function() {
