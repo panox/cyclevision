@@ -30,15 +30,15 @@
 <script type="text/x-template" id="user-template">
   <div class="row">
     <div class="col s12 m5">
-      <div class="card" id="current-user-card">
-        <div class="card-image">
+      <div class="card">
+        <div class="card-image" id="current-user-card">
           <br>
             <div class="card-content">
-              <p><strong><font size="3">Cyclist name | </strong></font><%= first_name %> <%= last_name %></p><br>
-              <p><strong><font size="3">E-mail | </strong></font><%= email %></p><br>
-              <p><strong><font size="3">Type of cyclist | </strong></font><%= type_of_cyclist %></p><br>
-              <p><strong><font size="3">About me | </strong></font><%= about_me %></p><br>
-            <img class="materialboxed" src="<%= profile_pic %>"></div>
+              <p id="-cyclist-name"><strong><font size="3">Cyclist name | </strong></font><%= first_name %> <%= last_name %></p><br>
+              <p id="-email"><strong><font size="3">E-mail | </strong></font><%= email %></p><br>
+              <p id="-type_of_cyclist"><strong><font size="3">Type of cyclist | </strong></font><%= type_of_cyclist %></p><br>
+              <p id="-about_me"><strong><font size="3">About me | </strong></font><%= about_me %></p><br>
+            <img class="materialboxed" id="-profile_pic" src="<%= profile_pic %>"></div>
           </div>
         </div>
       </div>
@@ -84,8 +84,6 @@
 
       <input type="text" name="local.email" id="email" value="<%= email %>">
 
-      <input type="password" name="local.password" id="password">
-
       <input type="text" name="first_name" id="first_name" value="<%= first_name %>">
 
       <input type="text" name="last_name" id="last_name" value="<%= last_name %>">
@@ -93,6 +91,8 @@
       <input type="text" name="profile_pic" id="profile_pic" value="<%= profile_pic %>">
 
       <input type="text" name="type_of_cyclist" id="type_of_cyclist" value="<%= type_of_cyclist %>">
+
+      <input type="text" name="about_me" id="about_me" value="<%= about_me%>">
 
       <input type="text" name="city" id="city" value="<%= city %>">
 
