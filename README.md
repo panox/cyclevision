@@ -34,4 +34,13 @@ We wanted to keep the site simple to use and have easy access to the functionali
  - A user is able to view the locations of their images on a map
  A user is able to edit their own information
 
+###Achievements
+
+As a 
+
+###Aims for the future
+
+###Final Product
+
+
 
