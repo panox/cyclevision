@@ -49,6 +49,7 @@ $(function() {
 
 
     var markers = [];
+    var bounds = new google.maps.LatLngBounds();
     var Geocoder = new google.maps.Geocoder();
 
     //get current user images
@@ -60,6 +61,10 @@ $(function() {
             position: results[0].geometry.location,
             map: map
           }));
+
+
+          bounds.extend(results[0].geometry.location);
+          map.fitBounds(bounds);
         }
       });
 
