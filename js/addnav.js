@@ -15,7 +15,6 @@ $(function() {
          '<ul class="side-nav" id="mobile-demo">' +
           '<li><a href="/pages/user.html">Profile</a></li>' +
           '<li><a href="/pages/images.html">Images</a></li>' +
-          '<li><a href="/pages/users.html">Cyclists</a></li>' +
           '<li><a href="#modal2" class="modal-trigger signup">Signup</a> </li>' +
           '<li><a href="#modal1" class="modal-trigger login">Login</a> </li>' +
         '</ul>' +
