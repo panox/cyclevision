@@ -137,7 +137,6 @@ $(function() {
         $(cardTitle).find('#title').text(data.title)
         $(cardTitle).find('#location').text(data.location)
         ajaxRequest("images/" + item._id, "PUT", data, function(){} )
-        $('.lean-overlay').remove()
       })
     });
   
