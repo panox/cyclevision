@@ -1,3 +1,7 @@
+function setToken(token){
+  return window.localStorage.setItem("token", token);
+}
+
 $(init);
 
 function init(){ 
