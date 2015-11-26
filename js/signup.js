@@ -8,7 +8,7 @@ function submitForm(){
   event.preventDefault();
 
   var method = $(this).attr('method');
-  var url = 'http://localhost:3000/api/signup';
+  var url = configKeys.url + 'signup';
   var data = $(this).serialize();
   console.log(data);
 
