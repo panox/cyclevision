@@ -18,7 +18,7 @@ JWT
 
 The wireframes of our website can be found here.
 
-(http://i.imgur.com/1G1KINd.png)
+![image](http://i.imgur.com/1G1KINd.png)
 
 ###Vision for the site
 
@@ -64,11 +64,11 @@ This site is fully mobile. It is able to work on screens of all sizes.
 
 The final screen shots are below:
 
-(http://i.imgur.com/JaB0lB0.png)
+![image](http://i.imgur.com/JaB0lB0.png)
 
-(http://i.imgur.com/MOmUKqi.png)
+![image](http://i.imgur.com/MOmUKqi.png)
 
-(http://i.imgur.com/DNekBg5.png)
+![image](http://i.imgur.com/DNekBg5.png)
 
-(http://i.imgur.com/1nCu1nq.png)
+![image](http://i.imgur.com/1nCu1nq.png)
 
