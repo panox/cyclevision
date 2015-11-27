@@ -143,35 +143,36 @@ $(function() {
     });
   
 
+    //Create new image
+    $('#new-image').on('submit', newImage);
+
+    function newImage(){
+      event.preventDefault();
+      var method = $(this).attr("method");
+      var url    = "images";
+      // var data   = {
+      //   title: $('#image-title').val(),
+      //   image: $('#image-url').val(),
+      //   location: $('#image-location').val(),
+      //   user: userId
+      // }
+
+      var data = new FormData($(this)[0]);
+      data.append("user", userId);
+
+      ajaxRequest(url, method, data, function(res) {
+        var image = res.image;
+        image.image = configKeys.bucketUrl + image.image;
+        var underscoreTemplate = _.template($('#user-images').html());
+        var compiledTemplate = underscoreTemplate(image);
+        $('#images').append(compiledTemplate);
+      }, true); // true for isMultipart as we send a file
+    }
+
+
   $('.modal-trigger').leanModal();
   
   });
 
-
-  //Create new image
-  $('#new-image').on('submit', newImage);
-
-  function newImage(){
-    event.preventDefault();
-    var method = $(this).attr("method");
-    var url    = "images";
-    // var data   = {
-    //   title: $('#image-title').val(),
-    //   image: $('#image-url').val(),
-    //   location: $('#image-location').val(),
-    //   user: userId
-    // }
-
-    var data = new FormData($(this)[0]);
-    data.append("user", userId);
-
-    ajaxRequest(url, method, data, function(res) {
-      var image = res.image;
-      image.image = configKeys.bucketUrl + image.image;
-      var underscoreTemplate = _.template($('#user-images').html());
-      var compiledTemplate = underscoreTemplate(image);
-      $('#images').prepend(compiledTemplate);
-    }, true); // true for isMultipart as we send a file
-  }
 
 });
