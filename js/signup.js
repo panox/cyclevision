@@ -8,15 +8,21 @@ function submitForm(){
   event.preventDefault();
 
   var method = $(this).attr('method');
-  var url = 'signup';
+  var url = configKeys.url + 'signup';
   var data = $(this).serialize();
+  console.log(data);
 
-  ajaxRequest(url, method, data, function(res) {
-    console.log(res)
-    window.localStorage.setItem("token", res.token);
-    window.localStorage.setItem("userId", res.user._id);
-    addLogout();
-  });
+  return ajaxRequest(method, url, data);
+}
+
+function ajaxRequest(method, url, data) {
+  return $.ajax({
+    method: method,
+    url: url,
+    data: data
+  }).done(function(data) {
+    console.log(data);
+  })
 }
 
 
