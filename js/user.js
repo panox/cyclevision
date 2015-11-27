@@ -19,7 +19,6 @@
 //var apiURL = "http://localhost:3000/api/";
 
 $(function() {
-
   
   var userId = localStorage.getItem("userId");
   
