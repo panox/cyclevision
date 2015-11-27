@@ -1,6 +1,10 @@
 body {
   background-color: aliceblue;
+  
 
+}
+html {
+  height: 100%;
 }
 
 .section {
@@ -21,11 +25,16 @@ body {
 }
 
 .homepagepic {
-  background-image: url('../images/bike5.jpg');
+  background: url('../images/bike5.jpg') no-repeat center center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   background-size: cover;
   display:block;
   padding-top: 30px;
   background-repeat: no-repeat;
+  height: 100%;
 
 }
 
@@ -86,7 +95,7 @@ nav .brand-logo {
 footer.page-footer {
   background-color: black;
   opacity: 0.5;
-
+  margin-top: 85px;
 
 }
 
