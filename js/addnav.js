@@ -26,6 +26,5 @@ $(function() {
 
   $('body').prepend(navigation);
   $(".button-collapse").sideNav();
-  $('.modal-trigger').leanModal();
 
 });
