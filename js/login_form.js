@@ -43,7 +43,7 @@ $(function(){
       console.log(data);
       window.localStorage.setItem("userId", data.user._id);
       addLogout();
-      $('.h1new').text('Cycle Scene')
+      $('.h1new').text('Cycle Hub')
       authenticationSuccessful(data);
     }).fail(function(data) {
       $('.h1new').text(data.responseJSON.message)
