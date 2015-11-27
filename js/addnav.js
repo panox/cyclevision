@@ -24,6 +24,7 @@ $(function() {
 
 
 
-  $('body').prepend(navigation)
+  $('body').prepend(navigation);
+  $(".button-collapse").sideNav();
 
 });
